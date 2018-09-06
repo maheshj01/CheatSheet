@@ -1,0 +1,201 @@
+#JavaScript CheatSheet
+
+************************************************** A basic format of javascript ******************************************
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index js</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//added comment here
+		document.write("Hello World, my first javascript program");
+	</script>
+
+</body>
+</html>
+
+****************************************************************************************************************************
+we can add comments to script tags using // or /* */ similar to java
+js statements end with  semicolon(;)
+var x="Hello World";
+var Array_name = new Array(10); // to create a array
+print on screen
+	document.write(x);  // prints Hello World
+
+************************************************** Variables in JS ********************************************************** 
+var x= 23; // int
+var x="Hello World";  // string
+var x="john said,\"boy do I love messi"";  // use escape (\) charahter to use (")strings
+var tuna = null;  // empty
+
+concatenate variables in a string of text using + operator
+e.g name="Mahesh";
+    age=22;	 
+document.write( name + "is my name and I am + age + "years old");
+
+Global and Local variables work the same as in C and C++
+there scope remains within the parenthesis
+******************************************************** functions in JS **********************************************************
+
+	function function_name(){	//function defination
+	// do something amazing and return if you want to  
+	// .... . ..........
+	return;
+	}	
+	function_name();	//to call the function
+
+JS supports Function within Function i.e nested function
+
+e.g
+	function one(){
+		document.write("function one");
+	}
+	function two(){
+		document.write("function two");
+	}
+
+	function callboth(){
+		one();
+		two();		
+	}
+
+	callboth();
+
+
+******************************************************* Math Operators ***************************************************
+*,+,-,/,%
+++,--,+=,-=,*=,/=,%=
+ same as in c++ or other programming languages
+<=,>=,<,>,!=,==  comparison operators
+&&,|| - logical operators
+***************************************************** conditional statements **********************************************
+
+if (condition){
+// do something else
+
+}else{
+	// do something
+}
+
+JS SUPPORTS NESTED IF else
+if(condition){
+	if(condition){
+	
+	}
+}else{
+	if(condition){
+	
+	}
+	else{
+	
+	}
+}
+
+************************************************************* switch statement ***************************************************
+switch(variable){
+	case choice 1:
+		statement 1;
+	break;
+	case choice 2:
+		statement 2;
+	break;
+
+	....
+	....
+	default:
+		default statement;
+
+}
+
+***************************************************************** for loop ******************************************************
+similar to c and c++
+for(i=0;i<10;i++){
+	document.write("<br>" + i);
+}
+
+***************************************************************** while loop ******************************************************
+var x=1;
+	while(condition is true){
+	do something
+	}
+***************************************************************** do while loop ******************************************************
+	do{
+		do something;
+	}while();
+
+***************************************************************** for loop ******************************************************
+e.g
+1. onclick="method_name()"
+<input type="button" name="alert_button" value="click me" onclick="popup_alert()">
+2.onMouseOver : the event gets triggered when mouse is hovered over a particluar element
+3.onMouseOut : the event gets triggered when mouse is hovered out from the element
+4.onLoad : when webpage is completelt loaded
+5.onUnLoad : when page is opted to close
+6.onblur : this event is triggered when the focus is removed from an element
+
+***************************************************************** Objects in JS ******************************************************
+
+we can create objects in JS using the constructor function
+
+function construvctor_function(properties){
+
+} 
+
+var object1 = new constructor_function(property value);
+
+e.g
+function people(name,age){
+	this.name = name;
+	this.age = age;
+}
+
+var john = new people("john cena",45);
+
+// we can acess each property using the dot operator 
+john.age
+john.name
+
+***************************************************************** Array Methods ******************************************************
+1.join() : converts an array to string by adding separator(" ",',','-') in between
+
+e.g array.join("-")
+2.pop() - removes the last element in the array
+3.reverse() - reverses the order of elements in the array
+4.sort() - sorts the elements in the array alphabetically
+5.length - returns Array.length
+
+
+
+***************************************************************** get Input Dialog ******************************************************
+var varname = prompt("dialog text","placeholder");
+
+***************************************************************** Math *********************************************************
+
+Math.sqrt(n);
+
+***************************************************************** DATE *********************************************************
+setInterval("doSomething()",1000); //   calls function doSomething() every 1 sec
+		var now = new Date();
+		H=now.getHours();
+		M=now.getMinutes();
+		S=now.getSeconds();
+		document.write(now); 
+		
+***************************************************************** FORMS IN JS ******************************************************
+FORMS are created in the <form></form> tags,theres an array of forms where the first form 
+is stored in forms[0] and we can access elements of each form through indexing
+
+<form name="MyForm">
+username: <input type="text" name="username"/>
+password:<input type ="password" name = "password"/>
+<input type="submit" value="submit">
+</form>
+<script type="text/javascript">
+	var x =document.forms[0].elements[0].name;	// will return username
+	var x =document.forms[0].elements[1].name;	// will return password
+	var x= document.MyForm.elements[0].name;	// will return username
+
+</script>
+
+</form
