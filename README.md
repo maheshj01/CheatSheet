@@ -23,11 +23,14 @@ Things to Remember before you contribute to this sheet
 9 else exit
 
 
-CheatSheets Available
+#**CheatSheets Available**#
 
 1.python cheatheet
-2.lua cheatsheet
+
+2.Lua cheatsheet
+
 3.javascript cheatsheet
+
 4......
 
 More to be added this will happen faster when you contribute
