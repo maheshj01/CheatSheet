@@ -26,4 +26,4 @@ so the quick way to get Started or access content of Different Languages is with
 
 **4......**
 
-## Would you please take your time to contribbute to this repository : )
+## Would you please take your time to contribute to this repository : )
