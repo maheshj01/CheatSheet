@@ -26,8 +26,8 @@ so the quick way to get Started or access content of Different Languages is with
 
 **4 Common SqL Queries that people usually find difficult**
 
-**5 Regex in Python 
+**5 Regex in Python** 
 ### HOW TO USE THIS FILE
-*just download this file and open in an editor that supports regex (sublime text) an start searching a pattern
+*just download this file and open in an editor that supports regex (sublime text) an start searching a pattern*
 
 ## Would you please take your time to contribute to this repository : )
