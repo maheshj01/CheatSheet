@@ -24,6 +24,6 @@ so the quick way to get Started or access content of Different Languages is with
 
 **3.javascript cheatsheet**
 
-**4......**
+**4 Common SqL Queries that people usually find difficult**
 
 ## Would you please take your time to contribute to this repository : )
