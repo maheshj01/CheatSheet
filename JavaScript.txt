@@ -199,3 +199,45 @@ password:<input type ="password" name = "password"/>
 </script>
 
 </form
+******************************************************************** Regex in JS *****************************************************
+WE WRITE REGEX PATTERN INSIDE(//) E.G /PATTERN/
+we test the pattern against a string as string.test(pattern);
+e.g String string="HELLO";
+string.test(/HELLO/); // returns true 
+
+#We can ignore the case during the search using flags. the i flag. 
+You can use it by appending it to the regex. 
+An example of using this flag is /Hello/i. This regex can match the strings "hello", "HeLLo", and "hElLo".
+
+#You can also extract the actual matches you found with the .match() method.
+To use the .match() method, apply the method on a string and pass in the regex inside the parentheses. Here's an example:
+
+
+#To search or extract a pattern more than once, you can use the g flag.
+
+let repeatRegex = /Repeat/g;
+testStr.match(repeatRegex);
+// Returns ["Repeat", "Repeat", "Repeat"]
+
+Note:You can have multiple flags on your regex like /search/gi
+
+#The wildcard character . will match any one character. The wildcard is also called dot and period. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match "hug", "huh", "hut", and "hum", you can use the regex /hu./ to match all four words.
+
+let humStr = "I'll hum a song";
+let hugStr = "Bear hug";
+let huRegex = /hu./;
+humStr.match(huRegex); // Returns ["hum"]
+hugStr.match(huRegex); // Returns ["hug"]
+
+#You can search for a literal pattern with some flexibility with character classes. Character classes allow you to define a group of characters you wish to match by placing them inside square ([ and ]) brackets.
+For example, you want to match "bag", "big", and "bug" but not "bog". You can create the regex /b[aiu]g/ to do this. The [aiu] is the character class that will only match the characters "a", "i", or "u".
+
+let bigStr = "big";
+let bagStr = "bag";
+let bugStr = "bug";
+let bogStr = "bog";
+let bgRegex = /b[aiu]g/;
+bigStr.match(bgRegex); // Returns ["big"]
+bagStr.match(bgRegex); // Returns ["bag"]
+bugStr.match(bgRegex); // Returns ["bug"]
+bogStr.match(bgRegex); // Returns null

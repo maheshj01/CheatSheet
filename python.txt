@@ -42,6 +42,18 @@ output
  2.23606797749979 
  1.1071487177940904
 
+******************************************************* break **************************************************
+for i in range(10):
+	print("i=",i)
+	for j in range(10):
+		print(j)
+		if(j==5):
+			break; #breaks only immediate loop to this break not outer for loop
+	print("outter for at ",j)
+
+print("outta loop")
+
+NOte: no goto in python
 *************************************************** sets in python **************************************************
 
  A set contains an unordered collection of unique and immutable objects.The set data type is, as the name implies, 
@@ -341,6 +353,17 @@ print[names for (names,num) in list]
 >>> print Cartesian_Product
 [(1, 2), (1, 4), (1, 6), (1, 8), (3, 2), (3, 4), (3, 6), (3, 8), (5, 2), (5, 4), (5, 6), (5, 8), (7, 2), (7, 4), (7, 6), (7, 8), (9, 2), (9, 4), (9, 6), (9, 8)]
 >>> 
+
+***************************************************** break statement ****************************************************
+for i in range(100):
+	print("i=",i)
+ 	for j in range(100):
+		print(j)
+ 		if(j==25):
+			break; #breaks only immediate loop
+ 	print("outter for at ",j)
+
+print("loop ended")
 
 
 *************************************************** Dictionary in python **************************************************
