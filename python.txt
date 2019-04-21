@@ -184,7 +184,7 @@ False
 
 
 
-*************************************************** Lists in python **************************************************
+********************************************** Lists in python ********************************************
 
 Consider a list (list = []). You can perform the following commands: 
 1)insert i e: Insert integer e at position i.
@@ -306,7 +306,7 @@ print nested_list[1]
 print nested_list[1][0]
 # prints red
 
-******************************************* List Comprehensions **********************************************
+**************************************** List Comprehensions ******************************************
 
 Lists compressions are used for one line code
 syntax: [expr for val in collection]
@@ -366,7 +366,7 @@ for i in range(100):
 print("loop ended")
 
 
-*************************************************** Dictionary in python **************************************************
+********************************************** Dictionary in python *********************************************
 
 Dictionaries are mutable, which means they can be changed. 
 The values that the keys point to can be any Python value. 
@@ -407,6 +407,21 @@ while resp=="Y" or resp=='y':
 print "out of dictionary"			
 
 #adding key-value pair in a dictionary
+
+
+#without dictionary
+
+string = input()
+#aabcbdgadeff
+list=[]
+for i in range(len(string)):
+	count=0
+	if(string[i] not in list):
+		for j in range(len(string)):
+			if(string[i]==string[j]):
+				count+=1;
+		print("string--->",string[i]," ",count)		
+		list.append(string[i])
 
 print "***********Combinig two lists two dictionary****************"
 keys=[]

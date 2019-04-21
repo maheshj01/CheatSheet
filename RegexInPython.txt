@@ -5,6 +5,18 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
 # HOW TO USE THIS FILE
 just download this file and open in an editor that supports regex (sublime text) an start searching a pattern
 
++0.54
+-0.34
++.34
+-.34
+.34
+.30.23
+34.23
+-32.24
+--34.34
+++46.85
+
+
 Task:Print comment from the below source code
 
 // my  program in C++
@@ -20,6 +32,7 @@ int main ()
   cout << "I'm a C++ program"; //use cout
   return 0;
 }
+
 /*This is a program to calculate area of a circle after getting the radius as input from the user*/
 //variables for storing radius and area
 //entering the value for radius of the circle as float data type
@@ -28,6 +41,13 @@ int main ()
 /*A test run for the program was carried out and following output was observed
 If 50 is the radius of the circle whose area is to be calculated
 The area of the circle is 7857.1429*/
+
+// program to match floating points
+import re;
+n = int(input())
+for i in range(n):
+    case = input()
+    print(bool(re.match("^[+-]?[\d]*\.[\d]+$",case)))
 
 
 /*mahesh@hackerank.com
