@@ -63,7 +63,7 @@ e.g
 
   ALTER table customers ADD email int(100);		
 
-  /* To Chnage datatype of existing column*/
+  /* To Change datatype of existing column*/
    
    ALTER table customers
    MODIFY COLUMN email VARCHAR(100);
@@ -147,7 +147,18 @@ ORDER BY customers.lastName
 
 
 *************************************************************** Example Queries With Solutions ****************************************************
-1. American Cities with population greater than 100000
+_______________________
+	STATION
+------------------------
+FIELD		TYPE
+ID		NUMBER
+CITY		VARCHAR2(21)
+STATE		VARCHAR2(2)
+LAT_N		NUMBER
+LONG_W		NUMBER
+
+
+1.American Cities with population greater than 100000
 SELECT * FROM CITY WHERE COUNTRYCODE=USA and POPULATION >100000
 
 2.Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths 
@@ -269,8 +280,48 @@ There are a total of 3 doctors.
 There are a total of 4 actors. 
 There are a total of 4 singers. 
 There are a total of 7 professors. 
+*********************************************************************** Aggregations *******************************************
+________CITY____________
+FIELD 		TYPE
+-------------------------
+ID		NUMBER
+NAME		VARCHAR(17)
+COUNTRYCODE 	VARCHAR(3)
+DISTRICT	VARCHAR(20)
+POPULATION	NUMBER
 
 
+1. SUM 
+e.g Query the total population of all cities in CITY where District is California.
+
+SELECT SUM(POPULATION)
+FROM CITY
+WHERE DISTRICT = 'CALIFORNIA'
+
+e.g Query the sum of the populations for all Japanese cities in CITY. The COUNTRYCODE for Japan is JPN.
+
+SELECT SUM(POPULATION)
+FROM CITY
+WHERE COUNTRYCODE = 'JPN'
+
+2. Average
+e.g Query the Average population of all cities in CITY where District is California.
+
+SELECT AVG(POPULATION)
+FROM CITY
+WHERE DISTRICT = 'CALIFORNIA'
+
+3.FLOOR
+e.g Query the Average population of all cities in CITY round of to nearest Integer
+
+SELECT FLOOR(AVG(POPULATION))
+FROM CITY
+
+4 MAX AND MIN
+e.g Query the difference between the maximum and minimum populations in CITY.
+
+SELECT max(Population)-min(POPULATION)
+FROM CITY
 **************************************************************************************************************************/
 		Most commonly asked queries that people find difficult
 
