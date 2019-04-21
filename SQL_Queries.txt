@@ -312,12 +312,18 @@ FROM CITY
 WHERE DISTRICT = 'CALIFORNIA'
 
 3.FLOOR
+rounds downs the nearest integer
+e.g -> 2.5 => 2
 e.g Query the Average population of all cities in CITY round of to nearest Integer
 
 SELECT FLOOR(AVG(POPULATION))
 FROM CITY
 
-4 MAX AND MIN
+4.CEIL
+rounds Up the nearest integer
+e.g -> 2.5 =>3
+
+5. MAX AND MIN
 e.g Query the difference between the maximum and minimum populations in CITY.
 
 SELECT max(Population)-min(POPULATION)
