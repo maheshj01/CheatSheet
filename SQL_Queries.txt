@@ -312,16 +312,31 @@ FROM CITY
 WHERE DISTRICT = 'CALIFORNIA'
 
 3.FLOOR
+rounds downs the nearest integer
+e.g -> 2.5 => 2
 e.g Query the Average population of all cities in CITY round of to nearest Integer
 
 SELECT FLOOR(AVG(POPULATION))
 FROM CITY
 
-4 MAX AND MIN
+4.CEIL
+rounds Up the nearest integer
+e.g -> 2.5 =>3
+
+5. MAX AND MIN
 e.g Query the difference between the maximum and minimum populations in CITY.
 
 SELECT max(Population)-min(POPULATION)
 FROM CITY
+
+6. REPLACE
+It used to Relace the perticluar character with other character
+
+e.g ->name = 'saurabh' 
+      REPLACE(name,'a','')
+      at output we get 'surbh'
+Question :->https://www.hackerrank.com/challenges/the-blunder/problem
+
 **************************************************************************************************************************/
 		Most commonly asked queries that people find difficult
 
