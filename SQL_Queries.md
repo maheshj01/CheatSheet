@@ -148,15 +148,16 @@ ORDER BY customers.lastName
 
 
 # Example Queries With Solutions 
-_______________________
-	STATION
-------------------------
-FIELD		TYPE
-ID		NUMBER
-CITY		VARCHAR2(21)
-STATE		VARCHAR2(2)
-LAT_N		NUMBER
-LONG_W		NUMBER
+
+####STATION
+
+| FIELD	|TYPE|
+| ------|-----:|
+|ID|NUMBER|
+|CITY|VARCHAR2(21)|
+|STATE|VARCHAR2(2)|
+|LAT_N|NUMBER|
+|LONG_W|NUMBER|
 
 
 1.American Cities with population greater than 100000
