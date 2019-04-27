@@ -149,10 +149,10 @@ ORDER BY customers.lastName
 
 # Example Queries With Solutions 
 
-####STATION
+#### STATION
 
 | FIELD	|TYPE|
-| ------|-----:|
+|:------:|:-----:|
 |ID|NUMBER|
 |CITY|VARCHAR2(21)|
 |STATE|VARCHAR2(2)|
@@ -283,14 +283,14 @@ There are a total of 4 actors.
 There are a total of 4 singers. 
 There are a total of 7 professors. 
 # Aggregations 
-________CITY____________
-FIELD 		TYPE
--------------------------
-ID		NUMBER
-NAME		VARCHAR(17)
-COUNTRYCODE 	VARCHAR(3)
-DISTRICT	VARCHAR(20)
-POPULATION	NUMBER
+#### CITY
+| FIELD | TYPE |
+|:-----:|:----:|
+|ID|NUMBER|
+|NAME|VARCHAR(17)|
+|COUNTRYCODE|VARCHAR(3)|
+|DISTRICT|VARCHAR(20)|
+|POPULATION|NUMBER|
 
 
 1. SUM 
