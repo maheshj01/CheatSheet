@@ -100,7 +100,7 @@ e.g
    SELECT DISTINCT firstName from customers;
 	
 # SQL OPERATORS
-
+```
 1. =         ---> equal to    
 2. <>        ---> not equal to
 3. >         ---> greater than
@@ -113,7 +113,7 @@ e.g
 10. IS NOT DISTINCT FROM ---> is equal to value or both are nulls
 11. AS  	----> used to change a field name when viewing results
 12. IN 		----> equal to one of multiple possible values e.g SELECT * from customers WHERE state IN ('New York','Massachusetts');  
-
+```
 #					Indexes
 1. To query data faster and efficiently
 
@@ -219,7 +219,7 @@ WHERE CITY REGEXP "^[aeiou].*[aeiou]$"
 or
 
 SELECT DISTINCT CITY
-FROM STATION
+FROM station
 WHERE SUBSTRING(CITY,1,1) IN ('a','e','i','o','u') and SUBSTRING(CITY,length(CITY),length(CITY)) IN ('a','e','i','o','u');
 
 6. Not begining with Vowels
