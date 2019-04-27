@@ -1,8 +1,8 @@
-/* To Create A Database */
+## To Create A Database 
 
    create database database_name;
 
-/* create a table*/
+## create a table
 
    create Table table_name(
     	attribute_name  type,
@@ -19,14 +19,14 @@ e.g create Table customers(
 	Primary KEY(id); 
     );
 
-/* Inserting a single Row into database */
+## Inserting a single Row into database 
 
    Insert into table_name(attributes,attributes,....) VALUES('value1','value2',....);
 
 e.g
    Insert into customers(firstName,lastName,zipcode) VALUES('John','Doe','345333');
 
-/* Inserting Multiple Rows into the Database */
+## Inserting Multiple Rows into the Database 
  
   Insert into customers(firstName,lastName,zipcode) VALUES
   ('James','Bond','35333'); /* Row 1*/
@@ -35,7 +35,7 @@ e.g
   ('Larry','Page','365233'); /* Row 4*/
 
 
-/* Update a row in the database */
+## Update a row in the database 
 
    Update table_name
    SET attribute = 'value'
@@ -99,7 +99,7 @@ e.g
 
    SELECT DISTINCT firstName from customers;
 	
-********************************************* SQL OPERATORS ************************************************
+# SQL OPERATORS
 
 1. =         ---> equal to    
 2. <>        ---> not equal to
@@ -113,16 +113,16 @@ e.g
 10. IS NOT DISTINCT FROM ---> is equal to value or both are nulls
 11. AS  	----> used to change a field name when viewing results
 12. IN 		----> equal to one of multiple possible values e.g SELECT * from customers WHERE state IN ('New York','Massachusetts');  
-**************************************************************************************************************************************
-					Indexes
+
+#					Indexes
 1. To query data faster and efficiently
 
  CREATE INDEX nameindex ON customers(firstName);
 
  DROP INDEX nameindex ON customers;
 
-*********************************************************************************************************************************************
-					JOINS 
+
+#					JOINS 
 ![](https://www.dofactory.com/Images/sql-joins.png)
 1. To combine two or more rows based on some common field between the tables
 	
@@ -147,7 +147,7 @@ LEFT JOIN orders ON customers.id = orders.customerId
 ORDER BY customers.lastName
 
 
-*************************************************************** Example Queries With Solutions ****************************************************
+# Example Queries With Solutions 
 _______________________
 	STATION
 ------------------------
@@ -257,7 +257,7 @@ from occupations
 group by occupation
 order by count(occupation)
 
-/********************** output  ******************
+# output  
 
 Aamina(D) 
 Ashley(P) 
@@ -281,7 +281,7 @@ There are a total of 3 doctors.
 There are a total of 4 actors. 
 There are a total of 4 singers. 
 There are a total of 7 professors. 
-*********************************************************************** Aggregations *******************************************
+# Aggregations 
 ________CITY____________
 FIELD 		TYPE
 -------------------------
@@ -338,8 +338,7 @@ e.g ->name = 'saurabh'
       at output we get 'surbh'
 Question :->https://www.hackerrank.com/challenges/the-blunder/problem
 
-**************************************************************************************************************************/
-		Most commonly asked queries that people find difficult
+#		Most commonly asked queries that people find difficult
 
 /* return employee record with max salary */
   
