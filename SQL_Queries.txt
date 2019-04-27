@@ -123,6 +123,7 @@ e.g
 
 *********************************************************************************************************************************************
 					JOINS 
+![](https://www.dofactory.com/Images/sql-joins.png)
 1. To combine two or more rows based on some common field between the tables
 	
    types of joins
