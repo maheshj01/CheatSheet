@@ -115,19 +115,19 @@ e.g
 11. AS  	----> used to change a field name when viewing results
 12. IN 		----> equal to one of multiple possible values e.g SELECT * from customers WHERE state IN ('New York','Massachusetts');  
 ```
-#					Indexes
+# Indexes
 1. To query data faster and efficiently
-
+```
  CREATE INDEX nameindex ON customers(firstName);
-
+```
+```
  DROP INDEX nameindex ON customers;
-
-
-#					JOINS 
+```
+ 
+# JOINS 
 ![](https://www.dofactory.com/Images/sql-joins.png)
-1. To combine two or more rows based on some common field between the tables
-	
-   types of joins
+Used to combine two or more rows based on some common field between the tables
+types of joins :
 	a) Inner Join
 	b) LEFT JOIN
 	c) Right Join
@@ -141,7 +141,7 @@ INNER JOIN orders
 ON customers.id = orders.orderId
 ORDER BY orders.orderNumber
 
-2.LEFT JOIN-- returns data from the LEFT TABLE with matching rows from Right table
+2. LEFT JOIN-- returns data from the LEFT TABLE with matching rows from Right table
 e.g SELECT customers.firstName,customers.lastName,orders.orderNumber,orders.orderDate
 from customers
 LEFT JOIN orders ON customers.id = orders.customerId
@@ -345,35 +345,35 @@ Question :->https://www.hackerrank.com/challenges/the-blunder/problem
 
 # Most commonly asked queries that people find difficult
 
-/* return employee record with max salary */
+1. return employee record with max salary 
 ```
   select *
   from employee
   where salary = (select Max(salary) from employee)
 ```
-  /* Select highest salary from employee table */
+2. Select highest salary from employee table 
 ```
    select Max(salary) from employee
 ```
-  /* select 2nd highest salary from employee table */
+3. select 2nd highest salary from employee table 
 ```
   select Max(saalary)
   from employee
   where salary NOT In (select Max(salary) form employee)
 ```
-  /* return Highest Salary,employee name,department name for each department */
+4. return Highest Salary,employee name,department name for each department 
 ```
   select e.first_name,e.last_name,e.salary,d.department
   from Employee e,Inner Join Department d ON(e.departmentId=d.DepartmentId)
   where salary IN (select Max(salary) from employee group by department_id)
 ```
-  /* select range of employee bases on Id */
+5. select range of employee bases on Id 
 ```
   select * 
   from employee 
   where employee_id between 2000 and 2010
 ```
-  /* return Employee name,highest Salary and Department Name */
+6. return Employee name,highest Salary and Department Name 
 ```  
   select e.first_name,e.last_name,e.salary,d.department
   from Employee e,Inner Join Department d ON(e.departmentId=d.DepartmentId)
