@@ -20,85 +20,86 @@ e.g create Table customers(
     );
 ```
 ## Inserting a single Row into database 
-
+```
    Insert into table_name(attributes,attributes,....) VALUES('value1','value2',....);
-
+```
 e.g
+```
    Insert into customers(firstName,lastName,zipcode) VALUES('John','Doe','345333');
-
+```
 ## Inserting Multiple Rows into the Database 
- 
+ ```
   Insert into customers(firstName,lastName,zipcode) VALUES
   ('James','Bond','35333'); /* Row 1*/
   ('John','Cena','355333'); /* Row 2*/
   ('Sam','Page','365333'); /* Row 3*/
   ('Larry','Page','365233'); /* Row 4*/
-
+```
 
 ## Update a row in the database 
-
+```
    Update table_name
    SET attribute = 'value'
    Where condition;
-
+```
    Note: if we dont specify where statement the update is applied to all the rows in 
       the database
 
   e.g to change the last name of person with id = 3 
-
+```
    Update customers
    SET last = 'Billings'
    Where id = 3;
-
+```
   /* delete a row */
-
+```
   DELETE from customers
   where id =3;	
-
+```
   /* ALTER TABLE */
-
+  
   1. Used to modify the schema of the table like add/delete column
 
   /* To add a column into the existing table using Alter table query */
-
+```
   ALTER table customers ADD email int(100);		
-
+```
   /* To Change datatype of existing column*/
-   
+```
    ALTER table customers
    MODIFY COLUMN email VARCHAR(100);
-
+```
   /* To drop existing column */
-   
+```   
   ALTER TABLE customers DROP COLUMN email;
-
+```
 
   /* SELECT STATEMENT TO RETRIEVE DATA*/
 
   1. To retrieve all data
- 
+```
    SELECT * from customers;
-
+```
   2. To retrieve limited or specific Columns	
-
+```
    SELECT firstName, lastName from customers
-
+```
   3. TO select specific row from table
-
+```
    SELECT * from customers where id = 3;
-
+```
   4. To order/sort data by Last Name
-
+```
    SELECT * from customers ORDER BY lastName;	
-	
+```	
   5  To sort by DESCENDING use DESC and ASC for Ascending
-   
+```   
    SELECT * from customers ORDER BY lastName DESC; 		
-
+```
  /* To select all unique firstnames from the database or avoids duplicate occurences */
-
+```
    SELECT DISTINCT firstName from customers;
-	
+```	
 # SQL OPERATORS
 ```
 1. =         ---> equal to    
@@ -342,7 +343,7 @@ e.g ->name = 'saurabh'
       at output we get 'surbh'
 Question :->https://www.hackerrank.com/challenges/the-blunder/problem
 
-#Most commonly asked queries that people find difficult
+# Most commonly asked queries that people find difficult
 
 /* return employee record with max salary */
 ```
