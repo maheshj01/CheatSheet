@@ -1,9 +1,9 @@
 ## To Create A Database 
-
+```
    create database database_name;
-
+```
 ## create a table
-
+```
    create Table table_name(
     	attribute_name  type,
 	attribute_name  type,
@@ -18,7 +18,7 @@ e.g create Table customers(
 	zipcode VARCHAR(10)
 	Primary KEY(id); 
     );
-
+```
 ## Inserting a single Row into database 
 
    Insert into table_name(attributes,attributes,....) VALUES('value1','value2',....);
@@ -161,12 +161,13 @@ ORDER BY customers.lastName
 
 
 1.American Cities with population greater than 100000
+```
 SELECT * FROM CITY WHERE COUNTRYCODE=USA and POPULATION >100000
-
+```
 2.Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths 
 (i.e.: number of characters in the name). If there is more than one smallest or largest city, 
 choose the one that comes first when ordered alphabetically.
-
+```
 SELECT CITY,LENGTH(CITY)
 FROM STATION
 ORDER BY Length(CITY) ASC ,
@@ -175,91 +176,92 @@ SELECT CITY,LENGTH(CITY)
 FROM STATION
 ORDER BY Length(CITY) DESC ,
 CITY DESC LIMIT 1;
-
+```
 3.Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. 
 Your result cannot contain duplicates.
-
+```
 SELECT DISTINCT CITY 
 FROM STATION 
 WHERE SUBSTRING(CITY,1,1) IN ('a','e','i','o','u');
-
+```
 Note: SUBSTRING(CITY,1,1) CREATES a substring for city from index 1 to 1
 
 or Using Regex
-
+```
 SELECT DISTINCT CITY 
 FROM STATION 
 WHERE CITY REGEXP "^[aeiou]";
-
+```
 Note: ^ cap denotes beginning with and [] indicates one of a,e,i,o,u
 
 4. Distinct CITY ending with vowels
-
+```
 SELECT DISTINCT CITY
 FROM STATION
 WHERE CITY REGEXP "[aeiou]$"
-
+```
 or
-
+```
 SELECT DISTINCT CITY
 FROM STATION
 WHERE SUBSTRING(CITY,length(CITY),length(CITY)) IN('a','e','i','o','u');
-
+```
 5. City Begining and ending with Vowels
-
+```
 select distinct city from station 
 where left(city,1) in ('a','e','i','o','u') 
 and right(city, 1) in ('a','e','i','o','u')
-
+```
 or
-
+```
 SELECT DISTINCT CITY
 FROM STATION
 WHERE CITY REGEXP "^[aeiou].*[aeiou]$"
-
+```
 or
-
+```
 SELECT DISTINCT CITY
 FROM station
 WHERE SUBSTRING(CITY,1,1) IN ('a','e','i','o','u') and SUBSTRING(CITY,length(CITY),length(CITY)) IN ('a','e','i','o','u');
-
+```
 6. Not begining with Vowels
-
+```
 SELECT DISTINCT CITY
 FROM STATION
 WHERE CITY REGEXP "^[^aeiou]"
-
+```
 or
-
+```
 SELECT DISTINCT CITY
 FROM STATION
 WHERE SUBSTRING(CITY,1,1) NOT IN ('a','e','i','o','u');
-
+```
 7. DISTINCT CITY NOT ENDNING WITH VOWELS
-
+```
 SELECT DISTINCT CITY
 FROM STATION
 WHERE CITY REGEXP ".*[^aeiou]$"
-
-8.Query an alphabetically ordered list of all names in OCCUPATIONS, immediately followed by
+```
+8. Query an alphabetically ordered list of all names in OCCUPATIONS, immediately followed by
  the first letter of each profession as a parenthetical (i.e.: enclosed in parentheses). 
 For example: AnActorName(A), ADoctorName(D), AProfessorName(P), and ASingerName(S).
 Query the number of ocurrences of each occupation in OCCUPATIONS. 
 Sort the occurrences in ascending order, and output them in the following format: 
 There are a total of [occupation_count] [occupation]s.
 
-
+```
 SELECT CONCAT(NAME,'(',SUBSTRING(OCCUPATION,1,1),')')
 FROM OCCUPATIONS
 ORDER BY NAME ASC;
-
+```
+```
 select concat('There are a total of ',count(occupation),' ',lower(occupation),'s.') as total
 from occupations
 group by occupation
 order by count(occupation)
-
+```
 # output  
-
+```
 Aamina(D) 
 Ashley(P) 
 Belvet(P) 
@@ -282,6 +284,7 @@ There are a total of 3 doctors.
 There are a total of 4 actors. 
 There are a total of 4 singers. 
 There are a total of 7 professors. 
+```
 # Aggregations 
 #### CITY
 | FIELD | TYPE |
@@ -295,42 +298,42 @@ There are a total of 7 professors.
 
 1. SUM 
 e.g Query the total population of all cities in CITY where District is California.
-
+```
 SELECT SUM(POPULATION)
 FROM CITY
 WHERE DISTRICT = 'CALIFORNIA'
-
+```
 e.g Query the sum of the populations for all Japanese cities in CITY. The COUNTRYCODE for Japan is JPN.
-
+```
 SELECT SUM(POPULATION)
 FROM CITY
 WHERE COUNTRYCODE = 'JPN'
-
+```
 2. Average
 e.g Query the Average population of all cities in CITY where District is California.
-
+```
 SELECT AVG(POPULATION)
 FROM CITY
 WHERE DISTRICT = 'CALIFORNIA'
-
+```
 3.FLOOR
 rounds downs the nearest integer
 e.g -> 2.5 => 2
 e.g Query the Average population of all cities in CITY round of to nearest Integer
-
+```
 SELECT FLOOR(AVG(POPULATION))
 FROM CITY
-
+```
 4.CEIL
 rounds Up the nearest integer
 e.g -> 2.5 =>3
 
 5. MAX AND MIN
 e.g Query the difference between the maximum and minimum populations in CITY.
-
+```
 SELECT max(Population)-min(POPULATION)
 FROM CITY
-
+```
 6. REPLACE
 It used to Relace the perticluar character with other character
 
@@ -339,39 +342,39 @@ e.g ->name = 'saurabh'
       at output we get 'surbh'
 Question :->https://www.hackerrank.com/challenges/the-blunder/problem
 
-#		Most commonly asked queries that people find difficult
+#Most commonly asked queries that people find difficult
 
 /* return employee record with max salary */
-  
+```
   select *
   from employee
   where salary = (select Max(salary) from employee)
-
+```
   /* Select highest salary from employee table */
-
+```
    select Max(salary) from employee
-
+```
   /* select 2nd highest salary from employee table */
-
+```
   select Max(saalary)
   from employee
   where salary NOT In (select Max(salary) form employee)
-
+```
   /* return Highest Salary,employee name,department name for each department */
-
+```
   select e.first_name,e.last_name,e.salary,d.department
   from Employee e,Inner Join Department d ON(e.departmentId=d.DepartmentId)
   where salary IN (select Max(salary) from employee group by department_id)
-
+```
   /* select range of employee bases on Id */
-
+```
   select * 
   from employee 
   where employee_id between 2000 and 2010
-
-
+```
   /* return Employee name,highest Salary and Department Name */
-  
+```  
   select e.first_name,e.last_name,e.salary,d.department
   from Employee e,Inner Join Department d ON(e.departmentId=d.DepartmentId)
   where salary IN (select Max(salary) from employee)
+```
