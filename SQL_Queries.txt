@@ -144,6 +144,60 @@ e.g SELECT customers.firstName,customers.lastName,orders.orderNumber,orders.orde
 from customers
 LEFT JOIN orders ON customers.id = orders.customerId
 ORDER BY customers.lastName
+*********************************************** EXAMPLES OF JOINS *****************************************
+________CITY____________ 	_____________COUNTRY______________
+FIELD 		TYPE    	FIELD			TYPE
+-------------------------	----------------------------------
+ID		NUMBER		CODE			VARCHAR2(3)
+NAME		VARCHAR(17)	NAME			VARCHAR2(44)
+COUNTRYCODE 	VARCHAR(3)	CONTINENT		VARCHAR2(13)
+DISTRICT	VARCHAR(20)	REGION			VARCHAR2(25)
+POPULATION	NUMBER		SURFACEAREA		NUMBER
+				INDEPYEAR		VARCHAR2(5)
+				POPULATION		NUMBER
+				LIFEEXPECTANCY		VARCHAR2(4)
+				GNP			NUMBER
+				GNPGOLD			VARCHAR2(9)
+				LOCALNAME		VARCHAR2(44)
+				GOVERNMENTFORM		VARCHAR2(44)
+				HEADOFSTATE		VARCHAR2(32)
+				CAPITAL			VARCHAR2(4)			
+				CODE2			VARCHAR2(2)
+1. Given the CITY and COUNTRY tables, 
+query the names of all cities where the CONTINENT is 'Africa'. 
+
+SELECT CITY.NAME
+FROM CITY,COUNTRY
+WHERE CITY.COUNTRYCODE = COUNTRY.CODE and COUNTRY.CONTINENT='Africa' 
+
+or 
+
+Select City.Name 
+From City Inner Join Country 
+On CountryCode = Code
+Where Continent = 'Africa';
+
+2. Given the CITY and COUNTRY tables, 
+query the names of all the continents (COUNTRY.Continent) 
+and their respective average city populations (CITY.Population) 
+rounded down to the nearest integer.
+
+SELECT COUNTRY.CONTINENT,FLOOR(AVG(CITY.POPULATION))
+FROM CITY INNER JOIN COUNTRY
+ON COUNTRYCODE=CODE
+GROUP BY COUNTRY.CONTINENT 
+
+NOTE: SEEMS LIKE WITH AGGREGATE FUNCTIONS WE NEED A GROUP BY
+
+3. Ketty gives Eve a task to generate a report containing three columns: 
+	Name, Grade and Mark.
+- Ketty doesn't want the NAMES of those students who received a grade lower than 8. 
+- The report must be in descending order by grade -- i.e. higher grades are entered first. 
+  If there is more than one student with the same grade (8-10) assigned to them, 
+- order those particular students by their name alphabetically. 
+- Finally, if the grade is lower than 8, use "NULL" as their name and list them by their grades in descending order. 
+- If there is more than one student with the same grade (1-7) assigned to them, 
+  order those particular students by their marks in ascending order.
 
 
 *************************************************************** Example Queries With Solutions ****************************************************

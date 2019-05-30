@@ -1,67 +1,5 @@
-m erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. 
-
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum
-6 letter word + optional _ +1-4 lngth digits @hackerank.com
-# HOW TO USE THIS FILE
-just download this file and open in an editor that supports regex (sublime text) an start searching a pattern
-
-+0.54
--0.34
-+.34
--.34
-.34
-.30.23
-34.23
--32.24
---34.34
-++46.85
-
-
-Task:Print comment from the below source code
-
-// my  program in C++
-
-#include <iostream>
-/** playing around in
-a new programming language **/
-using namespace std;
-
-int main ()
-{
-  cout << "Hello World";
-  cout << "I'm a C++ program"; //use cout
-  return 0;
-}
-
-/*This is a program to calculate area of a circle after getting the radius as input from the user*/
-//variables for storing radius and area
-//entering the value for radius of the circle as float data type
-//Mathematical function pow is used to calculate square of radius
-//displaying the results
-/*A test run for the program was carried out and following output was observed
-If 50 is the radius of the circle whose area is to be calculated
-The area of the circle is 7857.1429*/
-
-// program to match floating points
-import re;
-n = int(input())
-for i in range(n):
-    case = input()
-    print(bool(re.match("^[+-]?[\d]*\.[\d]+$",case)))
-
-
-/*mahesh@hackerank.com
-mahesh_@hackerank.com
-maheshjamdade_10@hackerank.com
-mahesh_j10@hackerank.com
-m_jamdade08_abc@hackerank.com
-m_ahesh_j@hackerank.com
-mahesh_1234_@hackerank.com
-m_123@hackerank.com
-*/
-import java.io.*
-abc.def.ghi.jkx
-1234.abc.def.ghi.jkc
+﻿# HOW TO USE THIS FILE
+just download this file and open in an editor that supports regex (sublime text) and start searching a pattern (ctr+f with .* enabled at bottom left)
 
 .       - Any Character Except New Line
 \d      - Digit (0-9)
@@ -88,6 +26,8 @@ Quantifiers:
 4. {3}     - Exact Number
 5. {3,4}   - Range of Numbers (Minimum, Maximum)
 
+
+
 e.g 
 w* : It will match the character w 0 or more times. 
 [xyz]* : It will match the characters x, y or z 0 or more times. 
@@ -103,9 +43,69 @@ For example:
 ([a-f]|[A-F]) will match any of the following characters: a, b, c, d, e, f, A, B, C, D, E, or F.
 
 e.g
-w{3,5} : It will match the character w ,3,4 or 5 times. 
-[xyz]{5,} : It will match the character x, y or z 5 or more times. 
+w{3,5} : It will match the character 'w' ,3,4 or 5 times. 
+[xyz]{5,} : It will match the character x, y or z, 5 or more times. 
 \d{1, 4} : It will match any digits 1,2,3 or 4 times.
+
+
+#sample text
+
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum
+6 letter word + optional _ +1-4 lngth digits @hackerank.com
+
++0.54
+-0.34
++.34
+-.34
+.34
+.30.23
+34.23
+-32.24
+--34.34
+++46.85
+
+/* program to match floating points using regex in python
+import re;
+n = int(input())
+for i in range(n):
+    case = input()
+    print(bool(re.match("^[+-]?[\d]*\.[\d]+$",case)))
+*/
+
+Task:Print comment from the below source code
+
+// my  program in C++
+
+#include <iostream>
+/** playing around in
+a new programming language **/
+using namespace std;
+
+int main ()
+{
+  cout << "Hello World";
+  cout << "I'm a C++ program"; //use cout
+  return 0;
+}
+
+
+
+/* sample valid email addresses */
+
+/*
+mahesh@hackerank.com
+mahesh_@hackerank.com
+maheshjamdade_10@hackerank.com
+mahesh_j10@hackerank.com
+m_jamdade08_abc@hackerank.com
+m_ahesh_j@hackerank.com
+mahesh_1234_@hackerank.com
+m_123@hackerank.com
+*/
+
+import java.io.*
+abc.def.ghi.jkx
+1234.abc.def.ghi.jkc
 
 
 #### Sample Regexs ####
