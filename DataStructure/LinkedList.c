@@ -42,7 +42,7 @@ void InsertNodeAtFront(int x){
 	}
 }
 
-void DisplayList(){
+void displayList(){
 	struct node *temp2 = start; /*store starting address in a temporary variable*/
 	printf("\nList: ");
 	while(temp2!=NULL){		/*traverse while end of list using temporary variable*/
@@ -67,10 +67,29 @@ void InsertAfter(int index , int x){
 	struct node * ZplusindexAddress = tempaddress;
 	tempaddress->link = newnodeAddress;
 	newnodeAddress->link = ZplusindexAddress;
-	DisplayList();
+	displayList();
 	/*c:;*/
 }
 
+void deleteFront(){
+	struct node * startAddress = start;
+	if(startAddress!=NULL){
+		start = startAddress->link;
+	}
+	else{
+		printf("\nLIST IS EMPTY NOTHING TO DELETE\n");
+	}
+}
+
+void deleteEnd(){
+	struct node *startAddress = start;
+	struct node * temp;
+	while(startAddress->link!=NULL){
+		temp = startAddress;
+		startAddress = startAddress->link;
+	}
+	temp->link=NULL;
+}
 
 int main(/*int argc, char const *argv[]*/)
 {
@@ -80,6 +99,8 @@ int main(/*int argc, char const *argv[]*/)
 	printf("\n1. Insert into List");
 	printf("\n2. Insert at front");
 	printf("\n3.Insert after node");
+	printf("\n4. Delete Front");
+	printf("\n5. Delete End");
 	printf("\n0. EXIT");
 	printf("\nenter your Operation on Linked List:");
 	scanf("%d",&n);
@@ -88,14 +109,14 @@ int main(/*int argc, char const *argv[]*/)
 		printf("\nInsert What? \n");
 		scanf("%d",&x);
 		InsertNodeAtEnd(x);
-		DisplayList();
+		displayList();
 	}
 	else if(n==2){
 		int x;
 		printf("\nInsert What at front? \n");
 		scanf("%d",&x);
 		InsertNodeAtFront(x);
-		DisplayList();
+		displayList();
 	}
 	else if(n==3){ /*needs a fix*/
 		int x;
@@ -105,6 +126,14 @@ int main(/*int argc, char const *argv[]*/)
 		printf("insert what? ");
 		scanf("%d \n",&x);
 		InsertAfter(z,x); /* insert x after zth node*/ 
+	}
+	else if(n==4){
+		deleteFront();
+		displayList();
+	}
+	else if(n==5){
+		deleteEnd();
+		displayList();
 	}
 	else{
 		printf("Invalid Operation entered\n");
