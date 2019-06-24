@@ -7,8 +7,13 @@ struct node
 };
 struct node *start=NULL;
 
+struct node * createNode(){
+ struct node *newnode = (struct node *)malloc(sizeof(struct node));
+ return newnode;
+}
+
 void InsertNodeAtEnd(int x){
- struct node *temp = (struct node *)malloc(sizeof(struct node)); /*dynamically created node that is to be added to list*/
+ struct node *temp = createNode(); /*dynamically created node that is to be added to list*/
  temp->data = x;
  temp->link = NULL;
 /* Now to connect above node to linked list there may be two cases*/
@@ -25,15 +30,10 @@ void InsertNodeAtEnd(int x){
  }
 }
 
-/*struct node * createNode(){
- struct node *newnode = (struct node *)malloc(sizeof(struct node));
- return newnode;
-}*/
-
 void InsertNodeAtFront(int x){
 	if(start != NULL){
 	struct node * tempAddress = start; /*store start address in temporary variable*/
-	struct node * newnode = malloc(sizeof(struct node)); /*create a node*/
+	struct node * newnode = createNode(); /*create a node*/
 	newnode->data = x; /*add data in new node*/
 	start = newnode; /* store new nodes address in start*/
 	newnode->link = tempAddress; /*add old start address in new nodes link*/
@@ -54,19 +54,25 @@ void displayList(){
 /* Needs a Fix */
 void InsertAfter(int index , int x){
 	int counter = 0;
-	struct node *newnodeAddress  = malloc(sizeof(struct node));
+	struct node * oldaddress,*newnodeAddress  = createNode();
 	struct node *tempaddress = start;
 	newnodeAddress->data = x;
+	/*start->3->5->6->7->NULL*/
+	if(index==0){
+		InsertNodeAtFront(x);
+	}else{
 	while(counter < index){
 		/*if(tempaddress->link==NULL){
 			InsertNodeAtEnd(x);
-			goto c;
+			break;
 		}*/
+		oldaddress = tempaddress;
 		tempaddress = tempaddress->link;
+		counter+=1;
 	}
-	struct node * ZplusindexAddress = tempaddress;
-	tempaddress->link = newnodeAddress;
-	newnodeAddress->link = ZplusindexAddress;
+	oldaddress->link=newnodeAddress;
+	newnodeAddress->link = tempaddress;
+}
 	displayList();
 	/*c:;*/
 }
@@ -93,7 +99,6 @@ void deleteEnd(){
 
 int main(/*int argc, char const *argv[]*/)
 {
-
 	int n=100;
 	while(n!=0){
 	printf("\n1. Insert into List");
@@ -104,7 +109,9 @@ int main(/*int argc, char const *argv[]*/)
 	printf("\n0. EXIT");
 	printf("\nenter your Operation on Linked List:");
 	scanf("%d",&n);
-	if(n==1){
+	if(n==0)
+		break;
+	else if(n==1){
 		int x;
 		printf("\nInsert What? \n");
 		scanf("%d",&x);
@@ -119,12 +126,11 @@ int main(/*int argc, char const *argv[]*/)
 		displayList();
 	}
 	else if(n==3){ /*needs a fix*/
-		int x;
+		int x,z;
 		printf("insert after node position e.g 2\n");
-		int z;
 		scanf("%d",&z);
 		printf("insert what? ");
-		scanf("%d \n",&x);
+		scanf("%d",&x);
 		InsertAfter(z,x); /* insert x after zth node*/ 
 	}
 	else if(n==4){
@@ -139,5 +145,6 @@ int main(/*int argc, char const *argv[]*/)
 		printf("Invalid Operation entered\n");
 	}
 	}
+	printf("exited\n");
 	return 0;
 }
