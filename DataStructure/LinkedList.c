@@ -51,6 +51,13 @@ void displayList(){
 	} 
 }
 
+reverseList(struct node * head){
+	 if(head != NULL){
+        reverseList(head->link);
+        printf("%d ",head->data);
+    }else{}
+}
+
 /* Needs a Fix */
 void InsertAfter(int index , int x){
 	int counter = 0;
@@ -106,6 +113,7 @@ int main(/*int argc, char const *argv[]*/)
 	printf("\n3.Insert after node");
 	printf("\n4. Delete Front");
 	printf("\n5. Delete End");
+	printf("\n6. Reverse List");
 	printf("\n0. EXIT");
 	printf("\nenter your Operation on Linked List:");
 	scanf("%d",&n);
@@ -140,6 +148,10 @@ int main(/*int argc, char const *argv[]*/)
 	else if(n==5){
 		deleteEnd();
 		displayList();
+	}
+	else if(n==6){
+		printf("ReverseList->");
+		reverseList(start);
 	}
 	else{
 		printf("Invalid Operation entered\n");
