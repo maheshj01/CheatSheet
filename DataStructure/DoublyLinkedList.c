@@ -110,8 +110,8 @@ int main()
 	printf("\n2. Insert at End");
 	printf("\n3. Reverse List");
 	printf("\n4. Delete Front");
-/*  printf("\n5. Delete End");
-	printf("\n0. EXIT");*/
+  	printf("\n5. Delete End");
+	printf("\n0. EXIT");
 	printf("\nenter your Operation on Linked List:");
 	scanf("%d",&n);
 	if(n==0)
