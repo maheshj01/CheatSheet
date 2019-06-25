@@ -29,6 +29,31 @@ void insertNodeAtFront(int x){
 	   }
 }
 
+void deleteFront(){
+	struct Node * startAddress = start;
+	if(startAddress!=NULL){
+		start = startAddress->front;
+		startAddress = start;
+		if(startAddress!=NULL){/*if atleast one node exist in list*/
+			startAddress->back = NULL;
+		}else{
+			printf("\nLIST IS EMPTY NOTHING TO DELETE\n");
+		}
+	}
+	else{
+		printf("\nLIST IS EMPTY NOTHING TO DELETE\n");
+	}
+}
+
+void deleteEnd(){
+	struct Node * temp,*tempaddress = start;
+	while(tempaddress->front !=NULL){
+		temp = tempaddress;
+		tempaddress = tempaddress->front;
+	}
+	temp->front = NULL;
+}
+
 void insertNodeAtEnd(int x){
 	struct Node *newNode = createNode();
 	newNode->data = x;
@@ -84,9 +109,8 @@ int main()
 	printf("\n1. Insert at Front");
 	printf("\n2. Insert at End");
 	printf("\n3. Reverse List");
-/*	printf("\n3.Insert after node");
 	printf("\n4. Delete Front");
-	printf("\n5. Delete End");
+/*  printf("\n5. Delete End");
 	printf("\n0. EXIT");*/
 	printf("\nenter your Operation on Linked List:");
 	scanf("%d",&n);
@@ -109,5 +133,13 @@ int main()
 	else if(n==3){
 		reverseList();
 	}	
+	else if(n==4){
+		deleteFront();
+		traverseList();
+	}
+	else if(n==5){
+		deleteEnd();
+		traverseList();
+	}
 	}
 }
