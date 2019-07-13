@@ -102,6 +102,46 @@ void reverseList(){
 	}
 }
 
+struct Node * sortList(struct Node *head,int data){
+	 struct Node *newNode,*start = head;
+    newNode = malloc(sizeof(struct Node));
+    newNode->data = data;
+    if(start == NULL){
+        newNode->back = NULL;
+        newNode->front = NULL; 
+        head = newNode;
+        return head;
+    }
+    else{
+        struct Node *prevNode=NULL;
+        while(start->data <= data){
+             prevNode = start;
+            start = start->front;
+            if(start == NULL){
+            	break;
+            }
+        }
+        if(start==head){/*inserting at front*/
+        newNode->back = NULL;	
+        newNode->front = start;
+        head = newNode;
+        return head;
+        }
+        if(start == NULL){ /*insert at end*/
+        printf("reached end\n");
+            prevNode->front = newNode;
+            newNode->back = prevNode;
+            newNode->front = NULL;
+            return head;
+        }
+        /*Insert in between Nodes*/
+        prevNode->front = newNode;
+        newNode->front = start;
+        newNode->back = prevNode;
+    }
+    return head;
+}
+
 int main()
 {
 	int n=100;
@@ -111,6 +151,7 @@ int main()
 	printf("\n3. Reverse List");
 	printf("\n4. Delete Front");
   	printf("\n5. Delete End");
+  	printf("\n6. Sort List");
 	printf("\n0. EXIT");
 	printf("\nenter your Operation on Linked List:");
 	scanf("%d",&n);
@@ -140,6 +181,17 @@ int main()
 	else if(n==5){
 		deleteEnd();
 		traverseList();
+	}
+	else if(n==6){
+		int z=1,x;
+		while(z){
+		printf("Insert what:");
+		scanf("%d",&x);
+ 		start = sortList(start,x);
+ 		traverseList();
+		printf("\n1 to continue \t 0 to exit?");
+		scanf("%d",&z);
+	}
 	}
 	}
 }
