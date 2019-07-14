@@ -88,7 +88,7 @@ void traverseList(){
 	}
 }
 
-void reverseList(){
+void printReverseList(){
  /*travel to end*/
 	struct Node *temp = start;
 	while(temp->front!=NULL){
@@ -142,16 +142,34 @@ struct Node * sortList(struct Node *head,int data){
     return head;
 }
 
+struct Node * reverseList(){
+    struct Node *prevNode = NULL,*head = start,*nextNode;
+    if(head == NULL){
+    	return head;
+    }
+    while(head->front != NULL){
+    	nextNode = head->front;
+    	head->front = prevNode;
+    	head->back = nextNode;
+    	prevNode = head;
+    	head = nextNode;
+    }
+    head->back=NULL;
+    head->front = prevNode;
+    return head;
+}
+
 int main()
 {
 	int n=100;
 	while(n){
 	printf("\n1. Insert at Front");
 	printf("\n2. Insert at End");
-	printf("\n3. Reverse List");
+	printf("\n3. Print Reverse List");
 	printf("\n4. Delete Front");
   	printf("\n5. Delete End");
   	printf("\n6. Sort List");
+  	printf("\n7. Reverse List");
 	printf("\n0. EXIT");
 	printf("\nenter your Operation on Linked List:");
 	scanf("%d",&n);
@@ -192,6 +210,11 @@ int main()
 		printf("\n1 to continue \t 0 to exit?");
 		scanf("%d",&z);
 	}
+	}
+	else if(n == 7){
+		start = reverseList();
+		printf("Revered List is:");
+		traverseList();
 	}
 	}
 }
