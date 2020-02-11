@@ -26,6 +26,8 @@ Quantifiers:
 4. {3}     - Exact Number
 5. {3,4}   - Range of Numbers (Minimum, Maximum)
 
+OR 
+(?:a|b) => means either a or b
 
 
 e.g 
