@@ -1,4 +1,5 @@
-******************************************************** arithmetic in python **************************************************
+### Arithmetic in python
+```
 >>> x=28  #int
 >>> y=28.0  #double
 >>> float(28) 
@@ -29,20 +30,24 @@ SyntaxError: invalid syntax
 3.0
 >>> a.imag
 4.0
+```
+
 
 import cmath
 a=complex(input())
 print(abs(complex(a.real,a.imag)))
 print(cmath.phase(complex(a.real,a.imag)))
 
-
+```
 input
 1+2j
 output
  2.23606797749979 
  1.1071487177940904
+```
+### break Statement
 
-******************************************************* break **************************************************
+```
 for i in range(10):
 	print("i=",i)
 	for j in range(10):
@@ -50,8 +55,8 @@ for i in range(10):
 		if(j==5):
 			break; #breaks only immediate loop to this break not outer for loop
 	print("outter for at ",j)
-
 print("outta loop")
+```
 
 NOte: no goto in python
 *************************************************** sets in python **************************************************
