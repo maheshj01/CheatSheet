@@ -135,18 +135,24 @@ types of joins :
 
 1. Inner Join -- returns data from both tables when there is match of specific field
 
-e.g SELECT customers.firstName,customers.lastName,orders.orderNumber
+e.g 
+```
+SELECT customers.firstName,customers.lastName,orders.orderNumber
 FROM customers
 INNER JOIN orders
 ON customers.id = orders.orderId
 ORDER BY orders.orderNumber
+```
 
 2. LEFT JOIN-- returns data from the LEFT TABLE with matching rows from Right table
-e.g SELECT customers.firstName,customers.lastName,orders.orderNumber,orders.orderDate
+e.g 
+
+```
+SELECT customers.firstName,customers.lastName,orders.orderNumber,orders.orderDate
 from customers
 LEFT JOIN orders ON customers.id = orders.customerId
 ORDER BY customers.lastName
-
+```
 
 # Example Queries With Solutions 
 
