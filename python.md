@@ -1,36 +1,36 @@
 ### Arithmetic in python
 ```python
 >>> x=28  #int
->>> y=28.0  #double
->>> float(28) 
+>>> y=28.0 #double
+>>> float(x) #typecast to float
 28.0
 >>> z=3.14 #float
->>> int(z)
+>>> int(z) #typecast to int
 3
 >>> x=1.732 #float
 >>> 1.732+0j
 (1.732+0j)
->>> complex(1.732)
+>>> complex(1.732) #typecast to complex no
 (1.732+0j)
->>> float(1.732)
-1.732
->>> a=2+3i
+
+>>> a=2+3i #invalid complex no
   File "<stdin>", line 1
     a=2+3i
          ^
 SyntaxError: invalid syntax
 >>> a=2+3j
->>> type(a)
+>>> type(a) #type of a
 <class 'complex'>
->>> a=complex(input())
+>>> a=complex(input()) #input complex no
 3+4j
->>> type(a)
+>>> type(a) #type of a
 <class 'complex'>
->>> a.real
+>>> a.real #real part of a
 3.0
->>> a.imag
+>>> a.imag #imaginary part of a
 4.0
 ```
+_Sample program to input a complex no and print its real and imaginary part_
 
 ```python
 import cmath
@@ -39,11 +39,13 @@ print(abs(complex(a.real,a.imag)))
 print(cmath.phase(complex(a.real,a.imag)))
 ```
 
+_input_
 ```
-input
 1+2j
-output
- 2.23606797749979 
+```
+_output_
+```
+ 2.23606797749979
  1.1071487177940904
 ```
 ### break Statement
@@ -63,21 +65,26 @@ Note: goto statement does not exist in python
 
 ### Sets
 
- A set contains an unordered collection of unique and immutable objects.The set data type is, as the name implies, 
- a Python implementation of the sets as they are known from mathematics.This explains, why sets unlike lists or tuples can't have
- multiple occurrences of the same element. 
+ A set contains an unordered collection of unique and immutable objects.The set data type is, as the name implies,
+ a Python implementation of the sets as they are known from mathematics.This explains, why sets unlike lists or tuples can't have multiple occurrences of the same element.
 
-an empty set can be defined as 
-variable=set() # iniialize a set
+an empty set can be defined as
 
-#set input from user 1 2 2 3 3 4 5 6 7 7 7 
-s = set(map(int, input().split())) 
+```python
+variable = set() # iniialize a set
+```
 
-If we want to add a single element to an existing set, we can use the .add() operation. 
+_taking set input from user on consnole 1 2 2 3 3 4 5 6 7 7 7
+
+```python
+s = set(map(int, input().split()))
+```
+If we want to add a single element to an existing set, we can use the `.add()` operation.
 It adds the element to the set and returns 'None'.
 
-Example1
+_Example1_
 
+```python
 >> myset.add('c')
 >> myset
 {'a', 'c', 'b'}
@@ -85,9 +92,11 @@ Example1
 >> myset.add((5, 4))
 >> myset
 {'a', 'c', 'b', (5, 4)}
+```
 
+_Example2_
 
-Example2
+```python
 >>> s = set('ackerRank')
 >>> s.add('H')
 >>> print s
@@ -96,15 +105,16 @@ set(['a', 'c', 'e', 'H', 'k', 'n', 'r', 'R'])
 None
 >>> print s
 set(['a', 'c', 'e', 'HackerRank', 'H', 'k', 'n', 'r', 'R'])
+```
+_.remove(x)_
 
-**.remove(x)**
-
-This operation removes element from the set. 
+This operation removes element from the set.
 If element does not exist, it raises a KeyError.
 The .remove(x) operation returns None.
 
-Example
-```
+_Example_
+
+```python
 >>> s = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
 >>> s.remove(5)
 >>> print s
@@ -117,14 +127,12 @@ set([1, 2, 3, 6, 7, 8, 9])
 KeyError: 0
 ```
 
-.discard(x)
-This operation also removes element 
+_.discard(x)_
 
-from the set. 
-If element 
+This operation also removes element from the set.
+If element does not exist, it does not raise a KeyError.
+The `.discard(x)` operation returns `None`.
 
-does not exist, it does not raise a KeyError.
-The .discard(x) operation returns None.
 Example
 
 ```python
@@ -141,10 +149,12 @@ set([1, 2, 3, 6, 7, 8, 9])
 set([1, 2, 3, 6, 7, 8, 9])
 ```
 
-.pop()
-This operation removes and return an arbitrary element from the set. 
-If there are no elements to remove, it raises a KeyError.
+_.pop()_
+
+This operation removes and return an arbitrary element from the set. If there are no elements to remove, it raises a KeyError.
+
 Example
+
 ```python
 >>> s = set([1])
 >>> print s.pop()
@@ -154,7 +164,7 @@ set([])
 >>> print s.pop()
 KeyError: pop from an empty set
 ```
-#### Common SET OPERATIONS  union(), intersection() and difference() functions.
+_Common SET operations  union(), intersection() and difference() functions._
 
 ```python
 >> a = {2, 4, 5, 9}
@@ -202,79 +212,95 @@ False
 
 #### Lists in python
 
-Consider a list (list = []). You can perform the following commands: 
-1)insert i e: Insert integer e at position i.
-2)print: Print the list.
-3)remove e: Delete the first occurrence of integer e.
-4)append e: Insert integer e at the end of the list. 
-5)sort: Sort the list.
-6)pop: Pop the last element from the list.
-7)reverse: Reverse the list.
+Consider a list `list = []`. You can perform the following commands:
+
+1. insert i e: Insert integer e at position i.
+2. print: Print the list.
+3. remove e: Delete the first occurrence of integer e.
+4. append e: Insert integer e at the end of the list.
+5. sort: Sort the list.
+6. pop: Pop the last element from the list.
+7. reverse: Reverse the list.
 
 When we talk about storing multiple values in a container-like data structure,
-the first thing that comes to mind is a list. 
+the first thing that comes to mind is a list.
 
-You can initialize a list as: 
-arr = list()
-# or simply
-arr = []
-or with a few elements as: 
-arr = [1,2,3]
+You can initialize a list as: `arr = list()`
+or `arr = []` or with a few elements as: `arr = [1,2,3]`
 
-Elements can be accessed easily similar to most programming languages: 
+Elements can be accessed easily similar to most programming languages:
+
+```python
 print arr[0]
-# result is 1
+result is 1
 print arr[0] + arr[1] + arr[2]
-# result is 6
+result is 6
+```
+
 Lists in Python are very versatile. You can add almost anything in a Python list.
-In Python, you can create a list of any objects: strings, integers, or even lists. You can even add multiple types in a single list! 
-Let's look at some of the methods you can use on list. 
-1.) append(x) 
-Adds a single element x to the end of a list. 
-arr.append(9)   
-print arr  
-# prints [1, 2, 3, 9]
-2.) extend(L) 
-Merges another list L to the end. 
+In Python, you can create a list of any objects: strings, integers, or even lists. You can even add multiple types in a single list!
+
+Let's look at some of the methods you can use on list.
+
+1. _append(x)_: Adds a single element x to the end of a list.
+
+```python
+arr.append(9)
+print arr #[1, 2, 3, 9]
+```
+2. _extend(L)_: Merges another list L to the end.
+
+```python
 arr.extend([10,11])
-print arr
-# prints [1, 2, 3, 9, 10, 11]
-3.) insert(i,x) 
-Inserts element x at position i. 
+print arr #[1, 2, 3, 9, 10, 11]
+```
+
+3. _insert(i,x)_: Inserts element x at position i.
+
+```python
 arr.insert(3,7)
-print arr
-# prints [1, 2, 3, 7, 9, 10, 11]
-4.) remove(x) 
-Removes the first occurrence of element x. 
-arr.remove(10)  
-arr  
-# prints [1, 2, 3, 7, 9, 11]
-5.) pop() 
-Removes the last element of a list. If an argument is passed, that index item is popped out. 
+print arr #[1, 2, 3, 7, 9, 10, 11]
+```
+4. _remove(x)_: Removes the first occurrence of element x.
+
+```python
+arr.remove(10)
+print(arr) #[1, 2, 3, 7, 9, 11]
+```
+
+5. _pop()_: Removes the last element of a list. If an argument is passed, that index item is popped out.
+
+```python
 temp = arr.pop()
-print temp 
-# prints 11
-6.) index(x) 
-Returns the first index of a value in the list. Throws an error if it's not found. 
+print temp # 11
+```
+6. _index(x)_: Returns the first index of a value in the list. Throws an error if it's not found.
+```python
 temp = arr.index(3)
-print temp
-# prints 2
-7.) count(x) 
-Counts the number of occurrences of an element x. 
+print temp # 2
+```
+
+7. _count(x)_: Counts the number of occurrences of an element x.
+```python
 temp = arr.count(1)
-print temp
-# prints 1
-8.) sort() 
-Sorts the list. 
+print temp # 1
+```
+8. _sort()_: Sorts the list.
+
+```python
 arr.sort()
-print arr
-# [1, 2, 3, 7, 9]
-9.) reverse() 
-Reverses the list. 
+print arr # [1, 2, 3, 7, 9]
+```
+9. _reverse()_ : Reverses the list.
+
+```python
 arr.reverse()
-print arr
-# [9, 7, 3, 2, 1]
+print arr # [9, 7, 3, 2, 1]
+```
+
 10.Remove duplicates from a list by turning lists to sets
+
+```python
 >>>l=[1,2,2,3,3,4,4,4,54,5,56,23,2]
 >>>l=list(set(l))
 >>>l
@@ -304,6 +330,7 @@ t=tuple(l)
 l=raw_input().split()
 >>>34 35 54 46 4343 2
 ['34', '35', '54', '46', '4343', '2']
+
 1.for x in range(len(l)):
 	l[x]=int(l[x])
 >>>[34, 35, 54, 46, 4343, 2]
@@ -312,8 +339,10 @@ l=raw_input().split()
 
 4.list=[int(x) for x in l]
 >>>[34, 35, 54, 46, 4343, 2]
+```
 
-************************************nested lists in python ******************************
+#### nested lists in python
+```python
 nested_list = [['blue', 'green'], ['red', 'black'], ['blue', 'white']]
 print len(nested_list)
 # prints 3
@@ -321,8 +350,9 @@ print nested_list[1]
 # prints ['red', 'black']
 print nested_list[1][0]
 # prints red
+```
 
-#### List Comprehensions
+### List Comprehensions
 
 Lists compressions are used for one line code
 syntax: [expr for val in collection]
@@ -340,7 +370,7 @@ p_remainders = [x**2%p for x in range(p)]
 len(p_remainders) = (p+1)/2
 
 
-#For loop without list comprehensions
+#### For loop without list comprehensions
 
 ```python
 list=[("RJ",25),("MJ",28),("RDX",32),("AKA",54),("Danny",324),("VK",121)]
@@ -348,13 +378,15 @@ list=[("RJ",25),("MJ",28),("RDX",32),("AKA",54),("Danny",324),("VK",121)]
 >>> for(name,num) in list:
 	print name+" "+str(num)
 ```
-
+_Output_
+```
 RJ 25
 MJ 28
 RDX 32
 AKA 54
 Danny 324
 VK 121
+```
 
 #### for loop with list comprehensions
 
@@ -372,7 +404,6 @@ print[names for (names,num) in list]
 >>> Cartesian_Product=[(a,b)for a in A for b in B]
 >>> print Cartesian_Product
 [(1, 2), (1, 4), (1, 6), (1, 8), (3, 2), (3, 4), (3, 6), (3, 8), (5, 2), (5, 4), (5, 6), (5, 8), (7, 2), (7, 4), (7, 6), (7, 8), (9, 2), (9, 4), (9, 6), (9, 8)]
->>> 
 ```
 
 #### break statement
@@ -389,12 +420,12 @@ for i in range(100):
 print("loop ended")
 ```
 
-#### Dictionary in python
+### Dictionary in python
 
-Dictionaries are mutable, which means they can be changed. 
-The values that the keys point to can be any Python value. 
+Dictionaries are mutable, which means they can be changed.
+The values that the keys point to can be any Python value.
 
-#### printing keys  in a dictionary
+_iterating keys in a dictionary_
 
 ```python
 food_dict = {"ham" : "yes", "egg" : "yes", "pizza" : "yes","olive": "no" }
@@ -406,7 +437,7 @@ print"\nkeys: ",
 for food_keys in food_dict.keys():
 	print food_keys,
 ```
-####printing values from a dictionary 	
+_iterating values from a dictionary_
 
 ```python
 print "\nvalues=",
@@ -414,12 +445,13 @@ for food_values in food_dict.values():
 	print food_values,
 ```
 
-#printing key value pair from dictionary
+_iterating key value pair from dictionary_
+
 ```python
 for food_keys,food_values in food_dict.items():
 	print str(food_keys) + ": " + str(food_values)
 ```
-#### changing value of a key in a dictionary 
+#### changing value of a key in a dictionary
 
 _dictionares are mutable_
 
@@ -431,10 +463,10 @@ while resp=="Y" or resp=='y':
 	resp=raw_input("add/change key-value of dictionary Y/N ")
 	if resp =="y" or resp=='Y':
 		key = raw_input("enter key to make changes:")
-		value=raw_input("enter value for "+ str(key) +":")	
+		value=raw_input("enter value for "+ str(key) +":")
 		food_dict[key]=value
 		print"length of food_dict=",len(food_dict)
-print "out of dictionary"			
+print "out of dictionary"
 ```
 
 #adding key-value pair in a dictionary
@@ -451,7 +483,7 @@ for i in range(len(string)):
 		for j in range(len(string)):
 			if(string[i]==string[j]):
 				count+=1;
-		print("string--->",string[i]," ",count)		
+		print("string--->",string[i]," ",count)
 		list.append(string[i])
 ```
 
@@ -462,7 +494,7 @@ keys=[]
 values=[]
 for food_keys in food_dict.keys():
 	keys.append(food_keys)
-	values.append(food_dict[food_keys]) 
+	values.append(food_dict[food_keys])
 print "keys=",
 print keys
 print "values=",
@@ -480,8 +512,8 @@ if key in new_dict.keys():
 	del(new_dict[key])
 	print "key-value pair removed"
 else:
-	print "invaid key entered"	
-print "new_dict=",new_dict	
+	print "invaid key entered"
+print "new_dict=",new_dict
 ```
 
 _string frequency in dict_
@@ -493,7 +525,7 @@ for i in string:
 	freq[i]=0
 for i in string:
 	freq[i]+=1
-print freq	
+print freq
 ```
 _output_
 
@@ -501,19 +533,19 @@ _output_
 mgm@lab3-5:~/Desktop$ python dict.py
 food_dict= {'olive': 'no', 'egg': 'yes', 'ham': 'yes', 'pizza': 'yes'}
 
-keys:  olive egg ham pizza 
-values= no yes yes yes 
+keys:  olive egg ham pizza
+values= no yes yes yes
 ```
 
-#### key value pair in ditionary
+_key value pair in ditionary_
 
-```python	
+```python
 olive: no
 egg: yes
 ham: yes
 pizza: yes
 ```
-	
+
 #Note:Dictionaries Are Mutable
 
 ```python
@@ -526,7 +558,10 @@ length of food_dict= 4
 dictionary= {'olive': 'no', 'egg': 'no', 'ham': 'yes', 'pizza': 'yes'}
 add/change key-value of dictionary Y/N N
 out of dictionary
-***********Combinig two lists two dictionary****************
+```
+_Combinig two lists two dictionary_
+
+```python
 keys= ['olive', 'egg', 'ham', 'pizza']
 values= ['no', 'no', 'yes', 'yes']
 new_dict= {'olive': 'no', 'egg': 'no', 'ham': 'yes', 'pizza': 'yes'}
@@ -537,18 +572,19 @@ new_dict= {'egg': 'no', 'ham': 'yes', 'pizza': 'yes'}
 *****************string frequency in dict*******************
 enter a string czechoslovakia
 {'a': 2, ' ': 1, 'c': 2, 'e': 1, 'i': 1, 'h': 1, 'k': 1, 'l': 1, 'o': 2, 's': 1, 'v': 1, 'z': 1}
-mgm@lab3-5:~/Desktop$ 
+mgm@lab3-5:~/Desktop$
 ```
 
 
-*************************************************** Tuples in python **************************************************
+### Tuples in python
+
 In Python, tuple is immutable. You cannot change elements of a tuple once it is assigned.
 
-There are only 2 tuple methods that tuple objects can call: 
+There are only 2 tuple methods that tuple objects can call:
 1. count
 2. index
 
-The page contains theses 2 tuple methods. Also the page includes built-in functions that can take tuple as a parameter and perform some task. 
+The page contains theses 2 tuple methods. Also the page includes built-in functions that can take tuple as a parameter and perform some task.
 For example, len(tuple) returns the length of a tuple (iterable).
 
 1.We can access a range of items in a tuple by using the slicing operator - colon ":"
@@ -571,7 +607,7 @@ The index of -1 refers to the last item,
 
 Python Tuple count() ->	returns occurrences of element in a tuple
 
-```python	
+```python
 >>> t=('c','z','e','c','h','o','s','l','o','v','a','k','i','a')
 >>> t.count('o')
 2
@@ -594,152 +630,252 @@ Python Tuple index() ->	returns smallest index of element in tuple
 (['hello', 'world'], 121, 'python', {'python': 'Guido Van Rossum', 'C': 'Dennis Ritchie', 'java': 'james Gosling'}, 1990, 'Hello World')
 
 >>> t.index(121)
-1
 >>> t.index('python')
-2
 >>> t.index('hello world')
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: tuple.index(x): x not in tuple
 >>> t.index('Hello World')
-5
-
-Python any() ->	Checks if any Element of an Iterable is True
-Python all() ->	returns true when all elements in iterable is true
-Python ascii() 	Returns String Containing Printable Representation
-Python bool() 	Coverts a Value to Boolean
-Python enumerate() 	Returns an Enumerate Object
-Python filter() 	constructs iterator from elements which are true
-
-Python iter() 	returns iterator for an o3bject
-
-Python len() 	Returns Length of an Object
->>>len(my_tuple)
-6
 ```
-Python max() 	returns largest element
-Python min() 	returns smallest element
-Python map() 	Applies Function and Returns a List
-Python reversed() 	returns reversed iterator of a sequence
-Python slice() 	creates a slice object specified by range()
-Python sorted() 	returns sorted list from a given iterable
-Python sum() 	Add items of an Iterable
-Python tuple() Function 	Creates a Tuple
-Python zip() 	Returns an Iterator of Tup
+
+`any()`: Checks if any Element of an Iterable is True
+
+`all()`: returns true when all elements in iterable is true
+
+`ascii()`: 	Returns String Containing Printable Representation
+
+`bool()`: Coverts a Value to Boolean
+
+`enumerate()`: 	Returns an Enumerate Object
+
+`filter()`: constructs iterator from elements which are true
+
+`iter()`: returns iterator for an o3bject
+
+`len()`: Returns Length of an Object
+
+>>>len(my_tuple)
+
+`max():`: returns largest element
+
+`min()`: 	returns smallest element
+
+`map()`: 	Applies Function and Returns a List
+
+`reversed()`: 	returns reversed iterator of a sequence
+
+`slice()`: 	creates a slice object specified by range()
+
+`sorted()`: 	returns sorted list from a given iterable
+
+`sum()`: 	Add items of an Iterable
+
+`tuple()`: Function 	Creates a Tuple
+
+`zip()`: 	Returns an Iterator of Tup
 
 ### String Methods in python
 
-Python has built-in string validation methods for basic data. 
+Python has built-in string validation methods for basic data.
 It can check if a string is composed of alphabetical characters,
  alphanumeric characters, digits, etc.
-str.isalnum() : This method checks if all the characters of a string are alphanumeric (a-z, A-Z and 0-9).
+
+`str.isalnum()` : This method checks if all the characters of a string are alphanumeric (a-z, A-Z and 0-9).
+
+```python
 >>> print 'ab123'.isalnum()
 True
 >>> print 'ab123#'.isalnum()
 False
+```
+`str.isalpha()` : This method checks if all the characters of a string are alphabetical (a-z and A-Z).
 
-str.isalpha() : This method checks if all the characters of a string are alphabetical (a-z and A-Z).
+```python
 >>> print 'abcD'.isalpha()
 True
 >>> print 'abcd1'.isalpha()
 False
+```
 
-str.isdigit() : This method checks if all the characters of a string are digits (0-9).
+`str.isdigit()` : This method checks if all the characters of a string are digits (0-9).
+
+```python
 >>> print '1234'.isdigit()
 True
 >>> print '123edsd'.isdigit()
 False
+```
 
-str.islower() : This method checks if all the characters of a string are lowercase characters (a-z).
+`str.islower()` : This method checks if all the characters of a string are lowercase characters (a-z).
+
+```python
 >>> print 'abcd123#'.islower()
 True
 >>> print 'Abcd123#'.islower()
 False
+```
 
-str.isupper() : This method checks if all the characters of a string are uppercase characters (A-Z).
+`str.isupper()` : This method checks if all the characters of a string are uppercase characters (A-Z).
+
+```python
 >>> print 'ABCD123#'.isupper()
 True
 >>> print 'Abcd123#'.isupper()
 False
+```
 
-string.swapcase(): converts lowercase to upper and vice versa
+`string.swapcase()`: converts lowercase to upper and vice versa
+
+```python
 >>> string="CZechOSloVAkia"
 >>> string.swapcase()
 'czECHosLOvaKIA'
+```
+`string.capitalize()` : Converts first character to Capital Letter
 
-string.capitalize() : Converts first character to Capital Letter 
+```python
 >>> string.capitalize()
 'Czechoslovakia'
+```
 
-Python String center(): Pads string with specified character 
+_String to ascii and Vice Versa_
+```python
+>>> ord('a')
+97
+>>> chr(97)
+'a'
+>>> chr(ord('a') + 3)
+'d'
+>>>
+```
 
-Python String casefold() : converts to casefolded strings 
- String count() :returns occurrences of substring in string 
- String endswith() : Checks if String Ends with the Specified Suffix 
- String expandtabs() : Replaces Tab character With Spaces 
- String encode() : returns encoded string of given string 
-Py String find() :Returns the Highest Index of Substring 
-Py String format() : formats string into nicer output 
-Py String index() : Returns Index of Substring 
-Py String isalnum() :Checks Alphanumeric Character 
-Py String isalpha() :Checks if All Characters are Alphabets 
-Py String isdecimal() : Checks Decimal Characters 
-Py String isdigit() : Checks Digit Characters 
-Py String isidentifier() : Checks for Valid Identifier 
-Py String islower() : Checks if all Alphabets in a String are Lowercase 
-Py String isnumeric() : Checks Numeric Characters 
-Py String isprintable() : Checks Printable Character 
-Py String isspace() : Checks Whitespace Characters 
-Py String istitle() : Checks for Titlecased String 
-Py String isupper() : returns if all characters are uppercase characters 
-Py String join() : Returns a Concatenated String 
-Py String ljust() : returns left-justified string of given width 
-Py String rjust() : returns right-justified string of given width 
-Py String lower() : returns lowercased string 
-Py String upper() : returns uppercased string 
-Py String swapcase() : swap uppercase characters to lowercase; vice versa 
-Py String lstrip() : Removes Leading Characters 
-Py String rstrip() : Removes Trailing Characters 
-Py String strip() : Removes Both Leading and Trailing Characters 
-Py String partition() : Returns a Tuple 
-Py String maketrans() : returns a translation table 
-Py String rpartition() : Returns a Tuple 
-Py String translate() : returns mapped charactered string 
-Py String replace() : Replaces Substring Inside 
-Py String rfind() : Returns the Highest Index of Substring 
-Py String rindex() : Returns Highest Index of Substring 
-Py String split() : Splits String from Left 
-Py String rsplit() : Splits String From Right 
-Py String splitlines() : Splits String at Line Boundaries 
-Py String startswith() : Checks if String Starts with the Specified String 
-Py String title() : Returns a Title Cased String 
-Py String zfill() : Returns a Copy of The String Padded With Zeros 
-Py String format_map() : Formats the String Using Dictionary 
-Py any() : Checks if any Element of an Iterable is True 
-Py all() : returns true when all elements in iterable is true 
-Py ascii() : Returns String Containing Printable Representation 
-Py bool() 
-Coverts a Value to Boolean 
- bytearray() : returns array of given byte size 
- bytes() : returns immutable bytes object 
- compile() : Returns a Python code object 
- complex() : Creates a Complex Number 
- enumerate() : Returns an Enumerate Object 
- filter() : constructs iterator from elements which are true 
- float() : returns floating point number from number, string 
- input() : reads and returns a line of string 
- int() : returns integer from a number or string 
- iter() : returns iterator for an object 
- len() : Returns Length of an Object 
- max() : returns largest element 
- min() : returns smallest element 
- map() : Applies Function and Returns a List 
- ord() : returns Unicode code point for Unicode character 
- reversed() : returns reversed iterator of a sequence 
- slice() : creates a slice object specified by range() 
- sorted() : returns sorted list from a given iterable 
- sum() : Add items of an Iterable 
- zip() : Returns an Iterator of Tuples 
+`Python String center()`: Pads string with specified character
+
+`Python String casefold()` : converts to casefolded strings
+`String count()` :returns occurrences of substring in string
+`String endswith()` : Checks if String Ends with the Specified Suffix
+`String expandtabs()` : Replaces Tab character With Spaces
+
+`String encode()` : returns encoded string of given string` String find`() :Returns the Highest Index of Substring
+
+`String format()` : formats string into nicer output
+
+`String index()` : Returns Index of Substring
+
+`String isalnum()` :Checks Alphanumeric Character
+
+`String isalpha()` :Checks if All Characters are Alphabets
+
+`String isdecimal()` : Checks Decimal Characters
+
+`String isdigit()` : Checks Digit Characters
+
+`String isidentifier()` : Checks for Valid Identifier
+
+`String islower()` : Checks if all Alphabets in a String are Lowercase
+
+`String isnumeric()` : Checks Numeric Characters
+
+`String isprintable()` : Checks Printable Character
+
+`String isspace()` : Checks Whitespace Characters
+
+`String istitle()` : Checks for Titlecased String
+
+`String isupper()` : returns if all characters are uppercase characters
+
+`String join()` : Returns a Concatenated String
+
+`String ljust()` : returns left-justified string of given width
+
+`String rjust()` : returns right-justified string of given width`y String lower() : returns lowercased string
+
+`String upper()` : returns uppercased string
+
+`String swapcase()` : swap uppercase characters to lowercase; vice versa
+
+`String lstrip()` : Removes Leading Characters
+
+`String rstrip()` : Removes Trailing Characters
+
+`String strip()` : Removes Both Leading and Trailing Characters
+
+`String partition()` : Returns a Tuple
+
+`String maketrans()` : returns a translation table
+
+`String rpartition()` : Returns a Tuple
+
+`String translate()` : returns mapped charactered string
+
+`String replace()` : Replaces Substring Inside
+
+`String rfind()` : Returns the Highest Index of Substring
+
+`String rindex()` : Returns Highest Index of Substring
+
+`String split()` : Splits String from Left
+
+`String rsplit()` : Splits String From Right
+
+`String splitlines()` : Splits String at Line Boundaries
+
+`String startswith()` : Checks if String Starts with the Specified String
+
+`String title()` : Returns a Title Cased String
+
+`String zfill()` : Returns a Co`of The String Padded With Zeros
+
+`String format_map()` : Formats the String Using Dictionary
+
+`any()` : Checks if any Element of an Iterable is True
+
+`all()` : returns true when all elements in iterable is true
+
+`ascii()` : Returns String Containing Printable Representation
+
+`bool()`: Coverts a Value to Boolean
+
+`bytearray()` : returns array of given byte size
+
+`bytes()` : returns immutable bytes object
+
+`compile()` : Returns a Python code object
+
+`complex()` : Creates a Complex Number
+
+`enumerate()` : Returns an Enumerate Object
+
+`filter()` : constructs iterator from elements which are true
+
+`float()` : returns floating point number from number, string
+
+`input()` : reads and returns a line of string
+
+`int()` : returns integer from a number or string
+
+`iter()` : returns iterator for an object
+
+`len()` : Returns Length of an Object
+
+`max()` : returns largest element
+
+`min()` : returns smallest element
+
+`map()` : Applies Function and Returns a List
+
+`ord()` : returns Unicode code point for Unicode character
+
+`reversed()` : returns reversed iterator of a sequence
+
+`slice()` : creates a slice object
+`specified by range()`
+
+`sorted()` : returns sorted list from a given iterable
+
+`sum()` : Add items of an Iterable
+
+`zip()` : Returns an Iterator of Tuples
 Also check
 
 Built-in Functions
@@ -758,24 +894,24 @@ Tuple Methods
     'string1 string2 string3'
 >>> 'We are learning {language}{version}'.format(language='python',version='3')
     'We are learning python 3'
->>> language=('Python','3') 
+>>> language=('Python','3')
 >>> 'we are learning {0[0]}{0[1]}'.format(language)
     'we are learning Python 3'
 
 
-string.split(): this method splits the input string into parts 
+string.split(): this method splits the input string into parts
 ```
 
- e.g In Python, a string can be split on a delimiter. 
+ e.g In Python, a string can be split on a delimiter.
 
-Example: 
+Example:
 
 ```python
 >>> a = "this is a string"
->>> a = a.split(" ") # a is converted to a list of strings. 
+>>> a = a.split(" ") # a is converted to a list of strings.
 >>> print a
 ['this', 'is', 'a', 'string']
-Joining a string is simple: 
+Joining a string is simple:
 >>> a = "-".join(a)
 >>> print a
 >>>>a="Mahesh"
@@ -783,26 +919,30 @@ Joining a string is simple:
  >>>> a
    ['M','a','h','e','s','h']
 ```
-	
-#### SLICING A STRING
+_Slicing a String_
+
+We have seen that lists are mutable (they can be changed), and tuples are immutable (they cannot be changed).
+Let's try to understand this with an example.
+You are given an immutable string, and you want to make changes to it.
+Example
 
 ```python
-We have seen that lists are mutable (they can be changed), and tuples are immutable (they cannot be changed). 
-Let's try to understand this with an example. 
-You are given an immutable string, and you want to make changes to it. 
-Example 
 >>> string = "abracadabra"
-You can access an index by: 
+You can access an index by:
 >>> print string[5]
 a
-What if you would like to assign a value? 
->>> string[5] = 'k' 
+What if you would like to assign a value?
+>>> string[5] = 'k'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: 'str' object does not support item assignment
+```
+
 How would you approach this?
-One solution is to convert the string to a list and then change the value. 
-Example 
+One solution is to convert the string to a list and then change the value.
+
+Example
+```python
 >>> string = "abracadabra"
 >>> l = list(string)
 >>> l[5] = 'k'
@@ -810,12 +950,12 @@ Example
 >>> print string
 abrackdabra
 Another approach is to slice the string and join it back.
-Example 
+Example
 >>> string = string[:5] + "k" + string[6:]
 >>> print string
 abrackdabra
 
-this-is-a-string 
+this-is-a-string
 ```
 
 #### JSON IN python
@@ -835,7 +975,7 @@ f.write(text)
 print("text",file=f)
 f.close()
 ```
-	
+
 #### Text Wrap in python
 
 The textwrap module provides two convenient functions: wrap() and fill().
@@ -850,7 +990,7 @@ It returns a list of output lines.
 >>> import textwrap
 >>> string = "This is a very very very very very long string."
 >>> print textwrap.wrap(string,8)
-['This is', 'a very', 'very', 'very', 'very', 'very', 'long', 'string.'] 
+['This is', 'a very', 'very', 'very', 'very', 'very', 'long', 'string.']
 
 textwrap.fill()
 The fill() function wraps a single paragraph in text and returns a single string containing the wrapped paragraph.
