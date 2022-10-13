@@ -1,5 +1,5 @@
 ### Arithmetic in python
-```
+```python
 >>> x=28  #int
 >>> y=28.0  #double
 >>> float(28) 
@@ -32,11 +32,12 @@ SyntaxError: invalid syntax
 4.0
 ```
 
-
+```python
 import cmath
 a=complex(input())
 print(abs(complex(a.real,a.imag)))
 print(cmath.phase(complex(a.real,a.imag)))
+```
 
 ```
 input
@@ -47,7 +48,7 @@ output
 ```
 ### break Statement
 
-```
+```python
 for i in range(10):
 	print("i=",i)
 	for j in range(10):
@@ -58,8 +59,9 @@ for i in range(10):
 print("outta loop")
 ```
 
-NOte: no goto in python
-*************************************************** sets in python **************************************************
+Note: goto statement does not exist in python
+
+### Sets
 
  A set contains an unordered collection of unique and immutable objects.The set data type is, as the name implies, 
  a Python implementation of the sets as they are known from mathematics.This explains, why sets unlike lists or tuples can't have
@@ -68,7 +70,7 @@ NOte: no goto in python
 an empty set can be defined as 
 variable=set() # iniialize a set
 
-#set input from user 1 2 2 3 3 4  5 6 7 7 7 
+#set input from user 1 2 2 3 3 4 5 6 7 7 7 
 s = set(map(int, input().split())) 
 
 If we want to add a single element to an existing set, we can use the .add() operation. 
@@ -95,12 +97,14 @@ None
 >>> print s
 set(['a', 'c', 'e', 'HackerRank', 'H', 'k', 'n', 'r', 'R'])
 
-.remove(x)
+**.remove(x)**
+
 This operation removes element from the set. 
 If element does not exist, it raises a KeyError.
 The .remove(x) operation returns None.
 
 Example
+```
 >>> s = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
 >>> s.remove(5)
 >>> print s
@@ -111,6 +115,7 @@ None
 set([1, 2, 3, 6, 7, 8, 9])
 >>> s.remove(0)
 KeyError: 0
+```
 
 .discard(x)
 This operation also removes element 
@@ -121,6 +126,8 @@ If element
 does not exist, it does not raise a KeyError.
 The .discard(x) operation returns None.
 Example
+
+```python
 >>> s = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
 >>> s.discard(5)
 >>> print s
@@ -132,11 +139,13 @@ set([1, 2, 3, 6, 7, 8, 9])
 >>> s.discard(0)
 >>> print s
 set([1, 2, 3, 6, 7, 8, 9])
+```
 
 .pop()
 This operation removes and return an arbitrary element from the set. 
 If there are no elements to remove, it raises a KeyError.
 Example
+```python
 >>> s = set([1])
 >>> print s.pop()
 1
@@ -144,9 +153,10 @@ Example
 set([])
 >>> print s.pop()
 KeyError: pop from an empty set
+```
+#### Common SET OPERATIONS  union(), intersection() and difference() functions.
 
-#Common SET OPERATIONS  union(), intersection() and difference() functions.
-
+```python
 >> a = {2, 4, 5, 9}
 >> b = {2, 4, 11, 12}
 >> a.union(b) # Values which exist in a or b
@@ -174,22 +184,23 @@ set(['a', 'c', 'r', 'e', 'H', 'k', 'Rank'])
 
 >>> s | set("Rank")
 set(['a', 'R', 'c', 'r', 'e', 'H', 'k', 'n'])
-
+```
 
 The union() and intersection() functions are symmetric methods:
 
+```python
 >> a.union(b) == b.union(a)
 True
 >> a.intersection(b) == b.intersection(a)
 True
 >> a.difference(b) == b.difference(a)
 False
+```
 
 
 
 
-
-********************************************** Lists in python ********************************************
+#### Lists in python
 
 Consider a list (list = []). You can perform the following commands: 
 1)insert i e: Insert integer e at position i.
@@ -311,7 +322,7 @@ print nested_list[1]
 print nested_list[1][0]
 # prints red
 
-**************************************** List Comprehensions ******************************************
+#### List Comprehensions
 
 Lists compressions are used for one line code
 syntax: [expr for val in collection]
@@ -328,13 +339,16 @@ Note: proved by Gauss
 p_remainders = [x**2%p for x in range(p)]
 len(p_remainders) = (p+1)/2
 
+
 #For loop without list comprehensions
 
+```python
 list=[("RJ",25),("MJ",28),("RDX",32),("AKA",54),("Danny",324),("VK",121)]
 
 >>> for(name,num) in list:
 	print name+" "+str(num)
-	
+```
+
 RJ 25
 MJ 28
 RDX 32
@@ -342,8 +356,9 @@ AKA 54
 Danny 324
 VK 121
 
-#for loop with list comprehensions
+#### for loop with list comprehensions
 
+```python
 print[names for (names,num) in list]
 ['RJ', 'MJ', 'RDX', 'AKA', 'Danny', 'VK']
 >>> print[num for (names,num) in list if num%2==0]
@@ -358,8 +373,11 @@ print[names for (names,num) in list]
 >>> print Cartesian_Product
 [(1, 2), (1, 4), (1, 6), (1, 8), (3, 2), (3, 4), (3, 6), (3, 8), (5, 2), (5, 4), (5, 6), (5, 8), (7, 2), (7, 4), (7, 6), (7, 8), (9, 2), (9, 4), (9, 6), (9, 8)]
 >>> 
+```
 
-***************************************************** break statement ****************************************************
+#### break statement
+
+```python
 for i in range(100):
 	print("i=",i)
  	for j in range(100):
@@ -369,15 +387,16 @@ for i in range(100):
  	print("outter for at ",j)
 
 print("loop ended")
+```
 
-
-********************************************** Dictionary in python *********************************************
+#### Dictionary in python
 
 Dictionaries are mutable, which means they can be changed. 
 The values that the keys point to can be any Python value. 
-'''
-#printing keys  in a dictionary
 
+#### printing keys  in a dictionary
+
+```python
 food_dict = {"ham" : "yes", "egg" : "yes", "pizza" : "yes","olive": "no" }
 
 print "food_dict=",
@@ -386,19 +405,25 @@ print food_dict
 print"\nkeys: ",
 for food_keys in food_dict.keys():
 	print food_keys,
+```
+####printing values from a dictionary 	
 
-#printing values from a dictionary 	
+```python
 print "\nvalues=",
 for food_values in food_dict.values():
 	print food_values,
+```
 
 #printing key value pair from dictionary
-
+```python
 for food_keys,food_values in food_dict.items():
 	print str(food_keys) + ": " + str(food_values)
+```
+#### changing value of a key in a dictionary 
 
-#changing value of a key in a dictionary 
-print "******************dictionares are mutable******************"
+_dictionares are mutable_
+
+```python
 resp='y'
 while resp=="Y" or resp=='y':
 	print "\ndictionary=",
@@ -410,12 +435,13 @@ while resp=="Y" or resp=='y':
 		food_dict[key]=value
 		print"length of food_dict=",len(food_dict)
 print "out of dictionary"			
+```
 
 #adding key-value pair in a dictionary
 
+_without dictionary_
 
-#without dictionary
-
+```python
 string = input()
 #aabcbdgadeff
 list=[]
@@ -427,8 +453,11 @@ for i in range(len(string)):
 				count+=1;
 		print("string--->",string[i]," ",count)		
 		list.append(string[i])
+```
 
-print "***********Combinig two lists two dictionary****************"
+_Combinig two lists two dictionary_
+
+```python
 keys=[]
 values=[]
 for food_keys in food_dict.keys():
@@ -441,8 +470,11 @@ print values
 new_dict=dict(zip(keys,values))
 print "new_dict=",
 print new_dict
+```
 
-print "************deleting element from a dictionary*************"
+_deleting element from a dictionary_
+
+```
 key = raw_input("enter key to delete:")
 if key in new_dict.keys():
 	del(new_dict[key])
@@ -450,8 +482,11 @@ if key in new_dict.keys():
 else:
 	print "invaid key entered"	
 print "new_dict=",new_dict	
+```
 
-print "*****************string frequency in dict*******************"
+_string frequency in dict_
+
+```python
 freq={}
 string=raw_input("enter a string")
 for i in string:
@@ -459,21 +494,29 @@ for i in string:
 for i in string:
 	freq[i]+=1
 print freq	
+```
+_output_
 
-"""***********************output***************************""" 
+```
 mgm@lab3-5:~/Desktop$ python dict.py
 food_dict= {'olive': 'no', 'egg': 'yes', 'ham': 'yes', 'pizza': 'yes'}
 
 keys:  olive egg ham pizza 
 values= no yes yes yes 
-****************key value pair in ditionary****************
+```
+
+#### key value pair in ditionary
+
+```python	
 olive: no
 egg: yes
 ham: yes
 pizza: yes
-
+```
+	
 #Note:Dictionaries Are Mutable
 
+```python
 dictionary= {'olive': 'no', 'egg': 'yes', 'ham': 'yes', 'pizza': 'yes'}
 add/change key-value of dictionary Y/N y
 enter key to make changes:egg
@@ -495,7 +538,7 @@ new_dict= {'egg': 'no', 'ham': 'yes', 'pizza': 'yes'}
 enter a string czechoslovakia
 {'a': 2, ' ': 1, 'c': 2, 'e': 1, 'i': 1, 'h': 1, 'k': 1, 'l': 1, 'o': 2, 's': 1, 'v': 1, 'z': 1}
 mgm@lab3-5:~/Desktop$ 
-
+```
 
 
 *************************************************** Tuples in python **************************************************
@@ -509,6 +552,8 @@ The page contains theses 2 tuple methods. Also the page includes built-in functi
 For example, len(tuple) returns the length of a tuple (iterable).
 
 1.We can access a range of items in a tuple by using the slicing operator - colon ":"
+
+```python
 >>>my_tuple = ('p','y','t','h','o','n')
 >>> my_tuple[2:5]
 ('t', 'h', 'o')
@@ -522,9 +567,11 @@ The index of -1 refers to the last item,
 ()
 >>> my_tuple[1:-3]
 ('y', 't')
-
+```
 
 Python Tuple count() ->	returns occurrences of element in a tuple
+
+```python	
 >>> t=('c','z','e','c','h','o','s','l','o','v','a','k','i','a')
 >>> t.count('o')
 2
@@ -557,7 +604,6 @@ ValueError: tuple.index(x): x not in tuple
 >>> t.index('Hello World')
 5
 
-
 Python any() ->	Checks if any Element of an Iterable is True
 Python all() ->	returns true when all elements in iterable is true
 Python ascii() 	Returns String Containing Printable Representation
@@ -570,7 +616,7 @@ Python iter() 	returns iterator for an o3bject
 Python len() 	Returns Length of an Object
 >>>len(my_tuple)
 6
-
+```
 Python max() 	returns largest element
 Python min() 	returns smallest element
 Python map() 	Applies Function and Returns a List
@@ -581,7 +627,7 @@ Python sum() 	Add items of an Iterable
 Python tuple() Function 	Creates a Tuple
 Python zip() 	Returns an Iterator of Tup
 
-*************************************************** String Methods in python **************************************************
+### String Methods in python
 
 Python has built-in string validation methods for basic data. 
 It can check if a string is composed of alphabetical characters,
@@ -703,8 +749,9 @@ String Methods
 Set Methods
 Tuple Methods
 
-# formatting Strings in python
+#### formatting Strings in python
 
+```
 >>>'this is our string {}'.format('in python')
 'this is our string in python '
 >>> '{3} {2} {1}'.format(' string3' , 'string2' ,'string1')
@@ -717,9 +764,13 @@ Tuple Methods
 
 
 string.split(): this method splits the input string into parts 
+```
 
  e.g In Python, a string can be split on a delimiter. 
+
 Example: 
+
+```python
 >>> a = "this is a string"
 >>> a = a.split(" ") # a is converted to a list of strings. 
 >>> print a
@@ -731,9 +782,11 @@ Joining a string is simple:
  a=list(a) # this will split a by character
  >>>> a
    ['M','a','h','e','s','h']
+```
+	
+#### SLICING A STRING
 
-#SLICING A STRING
-
+```python
 We have seen that lists are mutable (they can be changed), and tuples are immutable (they cannot be changed). 
 Let's try to understand this with an example. 
 You are given an immutable string, and you want to make changes to it. 
@@ -763,30 +816,37 @@ Example
 abrackdabra
 
 this-is-a-string 
+```
 
+#### JSON IN python
 
-# JSON IN python
-
+```python
 json.load(f) - load json data from a file
 json.loads(s) - load json data from a  string
 json.dump(j,f) - write json object to file or file like like object
 json.dump(j) - output json object as a string
+```
 
-
-#FILE
+### FILE operations
+```python
 f=open("file.txt",mode)  #modes:r,w,a
 text=f.read()
 f.write(text)
 print("text",file=f)
 f.close()
+```
+	
+#### Text Wrap in python
 
-*************************************************** Text Wrap in python **************************************************
 The textwrap module provides two convenient functions: wrap() and fill().
 
-textwrap.wrap()
+
+_textwrap.wrap()_
+
 The wrap() function wraps a single paragraph in text (a string) so that every line is width characters long at most.
 It returns a list of output lines.
 
+```python
 >>> import textwrap
 >>> string = "This is a very very very very very long string."
 >>> print textwrap.wrap(string,8)
@@ -806,9 +866,11 @@ very
 very
 long
 string.
+```
 
-*************************************************** Classes and Objects in python **************************************************
+#### Class and Objects in python
 
+```python
 class employee:
 	emp1=employee()  #1st instance of class
     emp2=employee()  #2nd instance of class
@@ -816,25 +878,4 @@ class employee:
     # variables in class
     emp1.first="john"
     emp1.last="cena"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
