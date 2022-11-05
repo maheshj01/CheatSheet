@@ -298,7 +298,37 @@ arr.reverse()
 print arr # [9, 7, 3, 2, 1]
 ```
 
-10.Remove duplicates from a list by turning lists to sets
+10. _copy_ : Return a shallow copy of the list. Equivalent to a[:].
+
+```py
+arr.copy()
+```
+
+```py
+fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits.count('apple')
+2
+>>> fruits.count('tangerine')
+0
+>>> fruits.index('banana')
+3
+>>> fruits.index('banana', 4)  # Find next banana starting at position 4
+6
+>>> fruits.reverse()
+>>> fruits
+['banana', 'apple', 'kiwi', 'banana', 'pear', 'apple', 'orange']
+>>> fruits.append('grape')
+>>> fruits
+['banana', 'apple', 'kiwi', 'banana', 'pear', 'apple', 'orange', 'grape']
+>>> fruits.sort()
+>>> fruits
+['apple', 'apple', 'banana', 'banana', 'grape', 'kiwi', 'orange', 'pear']
+>>> fruits.pop()
+'pear'
+```
+
+
+11. Remove duplicates from a list by turning lists to sets
 
 ```python
 >>>l=[1,2,2,3,3,4,4,4,54,5,56,23,2]
@@ -341,7 +371,7 @@ l=raw_input().split()
 >>>[34, 35, 54, 46, 4343, 2]
 ```
 
-#### nested lists in python
+#### Nested lists in python
 ```python
 nested_list = [['blue', 'green'], ['red', 'black'], ['blue', 'white']]
 print len(nested_list)
