@@ -30,3 +30,8 @@ so the quick way to get Started or access content of Different Languages is with
 ### HOW TO USE THIS FILE
 *just download this file and open in an editor that supports regex (sublime text) an start searching a pattern*
 
+
+
+Resources:
+
+SQL basics interactive tutorial: https://sqlbolt.com/
